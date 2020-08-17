@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>問導遊 - 尋找私人導遊的專屬平台</title>
+  <!-- FAVIOCN -->
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+
+  <!-- 引用css、Bootstrap、 jQuery 與 popper -->
+  <link rel="stylesheet" href="/stylesheets/base.css" />
+  <link rel="stylesheet" href="/stylesheets/common.css" />
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+  <link rel="stylesheet" href="/stylesheets/guide_list.css" />
+</head>
+
+<body>
+  <!-- header start -->
+  <header>
+    <!-- logo -->
+    <div class="logo">
+      <a href="/">
+        <img src="/images/logo-w.png" alt="" /></a>
+      <span>- when do you trip?</span>
+    </div>
+    <!-- 搜尋欄 -->
+    <div class="search">
+      <input type="search" value="輸入城市、景點、體驗行程或活動名稱..." />
+      <!-- <button>搜尋</button> -->
+      <input type="submit" value="搜尋" class="searchFun"></input>
+     
+    </div>
+    <!-- 登入/註冊 -->
+    <div class="login">
+      <% if( userName == "Guest" && title == ""){ %>
+      <a href="/users/login?backUrl=/trip"><span>登入</span></a>
+      <a href="/users/register?backUrl=/trip"><span>註冊</span></a>
+      <% }else if( userName == "Guest" && title == "guide"){ %>
+      <a href="/users/login?backUrl=/guide"><span>登入</span></a>
+      <a href="/users/register?backUrl=/guide"><span>註冊</span></a>
+      <% }else if(  userName == "Guest"  &&   title == "trip"){ %>
+      <a href="/users/login?backUrl=/trip"><span>登入</span></a>
+      <a href="/users/register?backUrl=/trip"><span>註冊</span></a>
+      <% }else { %>
+      <a href="/users/logout"><span>登出</span></a>
+      <a href="/users/member"><span>會員頁</span></a>
+      <% } %>
+      <!-- <a ><span>Welcome <%=  userName %></span></a> -->
+    </div>
+    <!-- 快捷導航 -->
+    <ul class="shortcut">
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+      <li>
+        <a href="/trip">選擇你的專屬行程</a>
+      </li>
+      <li>
+        <a href="/guide">尋找你的專屬導遊</a>
+      </li>
+      <li>
+        <a href="/users/shopcart">購物車</a>
+      </li>
+    </ul>
+  </header>
+  <!-- header end -->
+  <!-- banner start -->
+  <div class="banner">
+    <img src="/images/headerViwImg.jpg" alt="" />
+  </div>
+  <!-- banner end -->
+  <!-- 熱門導遊 start -->
+  <div class="container">
+    <div class="select">
+      <div class="select_basic">
+        <button onclick="findSide(this)" class="btnAll" >全部</button>
+        <button onclick="findSide(this)" class="btnNorth">北部</button>
+        <button onclick="findSide(this)" class="btnMidst">中部</button>
+        <button onclick="findSide(this)" class="btnSouth">南部</button>
+        <button onclick="findSide(this)" class="btnEast">東部</button>
+        <button onclick="findSide(this)" class="btnIslandsArea">外離島</button>
+        <!-- <em>｜</em> -->
+      </div>
+    </div>
+    <div class="title">
+      <a href="/users/shopcart">
+        <h2 id="aass">帶您暢享完美假期</h2>
+      </a>
+    </div>
+    <div class="guide clearfix">
+      <ul>
+        <li>
+          <img src="/images/add_guide2.jpg" alt="" />
+          <h4>Christina Wu</h4>
+          <p><span>
+            </span> 每人NT
+          </p>
+        </li>
+        <li>
+          <img src="/images/add_guide1.jpg" alt="" />
+          <h4>Pascal Aussignac</h4>
+          <p><span>美國</span> 每人NT2,000</p>
+        </li>
+        <li>
+          <img src="/images/add_guide3.jpg" alt="" />
+          <h4>Soo Ahn</h4>
+          <p><span>新加坡</span> 每人NT2,000</p>
+        </li>
+        <li>
+          <img src="/images/add_guide4.jpg" alt="" />
+          <h4>July Lee</h4>
+          <p><span>南韓</span> 每人NT2,000</p>
+        </li>
+        <li>
+          <img src="/images/add_guide2.jpg" alt="" />
+          <h4>Christina Wu</h4>
+          <p><span>台灣</span> 每人NT2,000</p>
+        </li>
+        <li>
+          <img src="/images/add_guide1.jpg" alt="" />
+          <h4>Pascal Aussignac</h4>
+          <p><span>美國</span> 每人NT2,000</p>
+        </li>
+        <li>
+          <img src="/images/add_guide3.jpg" alt="" />
+          <h4>Soo Ahn</h4>
+          <p><span>新加坡</span> 每人NT2,000</p>
+        </li>
+        <li>
+          <img src="/images/add_guide4.jpg" alt="" />
+          <h4>July Lee</h4>
+          <p><span>南韓</span> 每人NT2,000</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 熱門導遊 end -->
+  <!-- 分頁 -->
+  <div class="container">
+    <div class="row" id="content">
+    </div>
+    <div class="d-flex justify-content-center">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination" id="pageid">
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- 分頁 -->
+  <!-- footer start -->
+  <div class="footer">
+    <div class="links">
+      <dl>
+        <dt>認識問導遊</dt>
+        <dd><a href="#">關於我們</a></dd>
+        <dd><a href="#">管理團隊</a></dd>
+        <dd><a href="#">人才招募</a></dd>
+        <dd><a href="#">客戶服務</a></dd>
+        <dd><a href="#">幫助</a></dd>
+      </dl>
+      <dl>
+        <dt>給旅人</dt>
+        <dd><a href="#">三大保證</a></dd>
+        <dd><a href="#">官方部落格</a></dd>
+        <dd><a href="#">會員好禮</a></dd>
+      </dl>
+      <dl>
+        <dt>合作夥伴</dt>
+        <dd><a href="#">合作夥伴</a></dd>
+        <dd><a href="#">成為導遊</a></dd>
+        <dd><a href="#">同業合作</a></dd>
+        <dd><a href="#">聯盟行銷</a></dd>
+        <dd><a href="#">旅遊客製規劃</a></dd>
+      </dl>
+    </div>
+    <input id="sss" style="display: none;" class="sss" type="text" name="" value=<%=title%>>
+    <input id="ssa" style="display: none;" class="ssa" type="text" name="" value=<%=area%>>
+  </div>
+
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/guide_list.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+/* banner廣告 */
+
+.banner {
+    height: 500px;
+}
+
+.banner img {
+    height: 500px;
+    width: 100%;
+}
+/* 篩選列 */
+
+.select {
+    height: 100px;
+    /* margin-top: 100px; */
+    padding-top: 40px;
+}
+
+.select_basic button,
+.select_style button,
+.plus button {
+    float: left;
+    height: 20px;
+    padding: 15px;
+    margin-right: 5px;
+    border-radius: 20px;
+    line-height: 1px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid #6ac13c;
+    background-color: transparent;
+    font-weight: 600;
+    color: #666;
+}
+
+.plus button {
+    float: right;
+    margin-right: 80px;
+    font-size: 20px;
+    line-height: 1px;
+}
+
+.select_style button:hover,
+.select_basic button:hover,
+.plus button:hover {
+    border-color: #6ac13c;
+    background-color: #6ac13c;
+    color: #fff;
+}
+
+div.select_basic button.selected {
+    background-color: #6ac13c;
+    color: #fff;
+}
+
+/* 熱門導遊 */
+
+.title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.guide li {
+    position: relative;
+    width: 228px;
+    height: 270px;
+    float: left;
+    margin-top: 40px;
+    margin-right: 47px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+}
+
+.guide li img {
+    width: 228px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.guide li h4 {
+    margin: 20px;
+    font-size: 16px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.guide li p {
+    margin: 0px 20px;
+    font-size: 12px;
+    color: #999999;
+}
+
+.guide li p span {
+    color: orange;
+}
+/* hover效果 */
+
+.col-md-3:hover{
+    opacity: 0.7;
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+div.title a h2#aass{
+    color: #2D4D26;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+div.title a h2#aass:hover{
+    color: #6ac13c;
+}
+
+div.title a:hover{
+    text-decoration: none;
+}
+
+
+/* 分頁 */
+
+.page {
+    margin: 40px 0px;
+    text-align: center;
+}
+
+.page_num a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid #cccccc;
+    background-color: #f7f7f7;
+}
+
+.page_num .pn_pre,
+.page_num .pn_next {
+    width: 83px;
+}
+
+.page_num .current,
+.page_num .dotted {
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+.page_skip input {
+    width: 46px;
+    height: 36px;
+    border: 1px solid #cccccc;
+    text-align: center;
+    transition: all .5s;
+}
+
+.page_skip input:focus {
+    width: 88px;
+    border: 1px solid skyblue;
+}
+
+.page_skip button {
+    width: 54px;
+    height: 36px;
+    border: 1px solid #cccccc;
+    background-color: #f7f7f7;
+}
+
+.page-item.active .page-link {
+    background-color: #6ac13c;
+    border-color: #6ac13c;
+}
+
+.page-link {
+    color: #666;
+}
+
+#content {
+    opacity:0;
+}

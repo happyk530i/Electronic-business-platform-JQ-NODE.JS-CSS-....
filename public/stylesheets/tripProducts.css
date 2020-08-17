@@ -1,0 +1,31 @@
+
+#photoViewer{
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+#photoViewer.is-loading::after{
+   content: url(/images/logo-w.png);
+   position: absolute;
+   top: 0px;
+   left: 0px;
+}
+#photoViewer img{
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    /* object-fit:cover; */
+    top: 50%;
+    left: 50%;
+}
+.imgChoose{
+    padding-left: 20px;
+    width: 40vw;
+}
+.imgChoose img {
+    width: 150px;
+    height: 100px;
+}
+a.active{
+    opacity: 0.3;
+}

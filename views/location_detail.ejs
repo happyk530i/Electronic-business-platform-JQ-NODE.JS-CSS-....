@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問導遊 - 尋找私人導遊的專屬平台</title>
+    <!-- FAVIOCN -->
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+
+    <!-- 引用css、Bootstrap、 jQuery 與 popper -->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/popper.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/location_detail.css">
+
+</head>
+
+<body>
+    <%- include mod_header -%>
+    
+    <!-- 詳情頁內容start -->
+    <div class="bgWhitefff">
+        <div class="de_container container">
+        
+            <!-- 麵包屑導航 -->
+            
+            <!-- 預覽區域 -->
+            <div id="photoViewer">
+            </div>
+            <div class="imgChoose">
+                <a href="/images/trip/<%=title.tripPic1%>" class="thumb active" title="Elderberry mallow">
+                    <img src="/images/trip/<%=title.tripPic1%>" alt="Elderberry Marshmallow">
+                </a>
+                <a href="/images/trip/<%=title.tripPic2%>" class="thumb active" title="Rose Marshmallow">
+                    <img src="/images/trip/<%=title.tripPic2%>" alt="Rose Marshmallow">
+                </a>
+                <a href="/images/trip/<%=title.tripPic3%>" class="thumb active" title="Chrysanthemum Marshmallow">
+                    <img src="/images/trip/<%=title.tripPic3%>" alt="Chrysanthemum Marshmallow">
+                </a>
+            </div>
+   
+            <br>
+
+            <!-- content -->
+            <div class="preview_content clearfix">
+
+                <!-- left -->
+                <div class="preview_detail fl">
+                    <div class="crumb_wrap">
+                        <a href="#">
+                            台灣
+                        </a>
+                        &nbsp;&nbsp;/  &nbsp;&nbsp;
+                        <a href="#" class="selected">
+                            <%=title.tirpCity%>
+                        </a>
+                    </div>
+
+                    <h2 class="titleDetail">
+                        <%=title.tripName%>
+                    </h2>
+                    <ul class="location_detail">
+                        <li>
+                            人數限制：<%=title.peoMost%>
+                        </li>
+                        <li>
+                            <span>行程時間3小時</span>
+                            <span>｜</span>
+                            <span>English/日本語/中文 導覽</span>
+                            <span>｜</span>
+                            <span>有條件取消</span> 
+                        </li>
+                    </ul>
+                
+                    <div>
+                        <h4 class="contentDetail">
+                            <%=title.tripIntroduce%>
+                        </h4>
+    
+                        <br>
+
+                        <div class="leftCircle">
+                            <ul class="program_detail">
+                               <li>注意身體狀況，請準備充足的水分</li>
+                               <li>入園票需自行提前預訂</li>
+                               <li>如果有特殊需求請提前Mail告知</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ## left -->
+                
+                <!-- right -->
+                <div class="preview_news fr">
+                    <div class="preview_choice">
+                        <div class="calendar">
+                            <div class="title">
+                              <h1 class="green" id="calendar-title">Month</h1>
+                              <h2 class="green_small my-2" id="calendar-year">Year</h2>
+                                <a href="" id="prev">
+                                  <img src="/images/date_pre.png">
+                                </a>
+                                <a href="" id="next">
+                                  <img src="/images/date_next.png">
+                                </a>
+                            </div>
+                            <div class="body">
+                                <div class="lightgrey body-list">
+                                    <ul>
+                                        <li>MON</li>
+                                        <li>TUE</li>
+                                        <li>WED</li>
+                                        <li>THU</li>
+                                        <li>FRI</li>
+                                        <li>SAT</li>
+                                        <li>SUN</li>
+                                    </ul>
+                                </div>
+                                <div class="darkgrey body-list">
+                                  <ul id="days">
+                                  </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- form -->
+                        <form method="POST" action="" class="mt-5">
+                            <div class="formTime">
+                                <h5 class="formTo">日期 : &nbsp;</h5>
+                                    <input type="text" class="btn-success" name="tripDate" value="" id="dateResult" disabled >
+                                    <input hidden class="btn-success" name="tripDate" value="" id="tripDate">
+                                    &nbsp;&nbsp;&nbsp;
+                                <h5 class="formTo">場次 : &nbsp;</h5>
+                                    <select class="btn-success" name="tripTime" ><option value="<%=title.tripTime%>"><%=title.tripTime%></option> </select>
+                            </div>
+                            <div class="formCount gm mt-3">
+                                <h5 class="formTo">語言 : &nbsp;</h5>
+                                    <!-- 隱藏欄位 - 價格-->
+                                    <span class="price" style="display:none;"><%=title.tripPrice%></span>
+                                    <input type="hidden" name="memberId" value="<%=userId%>">
+                                    <input type="hidden" name="preTripName" value="<%=title.tripName%>">
+                                    <input type="hidden" name="preGuideId" value="<%=title.guideId%>">
+                                    <input type="hidden" name="preTripId" value="<%=title.tripId%>">
+                                 <select class="btn-success" name="orderLan" >
+                                     <option value="國語">國語</option>
+                                     <option value="英語">英語</option>
+                                     <option value="台語">台語</option>
+                                 </select>
+
+                                    <!-- 成人 - 計算數量 -->
+                                    <button class="adultCount" type="button">人數</button>
+                                    <!-- min 減 -->
+                                    <input class="min" name="" type="button" value="-" style="margin-top:25px;width:15%;height:40px;border:1px solid #d8d8d8;background-color:#ffffff;"/>
+                                    <!-- 輸入框 -->
+                                    <input class="text_box" name="adultCount" type="text" value="1" style="margin-top:25px;height:40px;width:65%;border:1px solid #d8d8d8;"/>
+                                    <!-- add 加 -->
+                                    <input class="add" name="" type="button" value="+" style="margin-top:25px;width:15%;height:40px;border:1px solid #d8d8d8;background-color:#ffffff;" />
+                                    
+                                    <!-- 小孩 - 計算數量 -->
+                                    <!-- min 減 -->
+                                    <!-- <input class="min_chil" name="" type="button" value="-" style="margin-top:25px;width:15%;height:40px;border:1px solid #d8d8d8;background-color:#ffffff;"/> -->
+                                    <!-- 輸入框 -->
+                                    <!-- <input class="text_boxchil" name="childCount" type="text" value="0" style="margin-top:25px;height:40px;width:65%;border:1px solid #d8d8d8;"/> -->
+                                    <!-- add 加 -->
+                                    <!-- <input class="add_chil" name="" type="button" value="+" style="margin-top:25px;width:15%;height:40px;border:1px solid #d8d8d8;background-color:#ffffff;" /> -->
+                                    <!-- <button class="childCount" type="button">小孩</button> -->
+                                    
+                                    <!-- 顯示價格 -->
+                                    <h4 class="mb-5 fr">TWD:
+                                        <span id="total"></span>
+                                    </h4>
+                                    <!-- 隱藏欄位 -->
+                                    <input hidden type="text" name="totalPrice" id="totalPost">
+
+                                    <!-- 備註欄 -->
+                                    <div class="form-group">
+                                        <label for="Textarea">
+                                            <h5 class="formTo" style="color: #FF6A79;">備註 (有什麼特殊需求請填寫於此) : </h5>
+                                        </label>
+                                        <textarea class="form-control" id="Textarea" name="Content" rows="4" placeholder="請說明你的需求..."></textarea>
+                                    </div>
+                            </div>
+                            
+                            <br><br> 
+
+                            <button type="submit" value="submit" class="goCart">
+                                <h3>加入購物車</h3>
+                            </button>
+                        </form>
+                   </div>
+                </div>
+                <!-- ## right -->
+                
+            </div>
+            <!-- ## content -->
+        </div>
+    </div>
+    <!-- 詳情頁內容end -->
+
+    <!-- footer start -->
+    <div class="footer">
+        <div class="links">
+            <dl>
+                <dt>認識問導遊</dt>
+                <dd><a href="#">關於我們</a></dd>
+                <dd><a href="#">管理團隊</a></dd>
+                <dd><a href="#">人才招募</a></dd>
+                <dd><a href="#">客戶服務</a></dd>
+                <dd><a href="#">幫助</a></dd>
+            </dl>
+            <dl>
+                <dt>給旅人</dt>
+                <dd><a href="#">三大保證</a></dd>
+                <dd><a href="#">官方部落格</a></dd>
+                <dd><a href="#">會員好禮</a></dd>
+            </dl>
+            <dl>
+                <dt>合作夥伴</dt>
+                <dd><a href="#">合作夥伴</a></dd>
+                <dd><a href="#">成為導遊</a></dd>
+                <dd><a href="#">同業合作</a></dd>
+                <dd><a href="#">聯盟行銷</a></dd>
+                <dd><a href="#">旅遊客製規劃</a></dd>
+            </dl>
+        </div>
+    </div>
+    <script src="/javascripts/location_detail.js"></script>
+    <script>
+       document.getElementById("Textarea").onclick=()=>{
+            document.getElementById("Textarea").innerText="如果可以的話，請幫我們準備導覽手冊";
+        }
+    </script>
+</body>
+
+</html>

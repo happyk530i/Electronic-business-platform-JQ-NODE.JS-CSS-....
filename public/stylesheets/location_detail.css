@@ -1,0 +1,402 @@
+
+div.bgWhitefff {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+}
+
+h2.titleDetail {
+    color: #666;
+    font-weight:bolder;
+    background-color: #DEDEDE;
+    display: inline-block;
+}
+
+li{
+    font-size: 1.2rem;
+}
+
+li>span{
+    color: #666;
+    font-weight: 600;
+}
+
+.de_container {
+    padding-top: 50px;
+}
+
+.preview_content{
+    overflow:hidden;
+    margin-top: 20px;
+}
+
+.crumb_wrap {
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.075);
+    border-radius: 30px;
+    border: 0px;
+    padding: 6px 10px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.crumb_wrap a {
+    margin-right: 10px;
+    text-decoration: none;
+    color:#666;
+    font-weight: 600;
+}
+
+.crumb_wrap a:hover {
+    color: #98B716;
+}
+
+.crumb_wrap a.selected {
+    color:#98B716;
+}
+
+.preview_detail {
+    width: 50%;
+}
+
+.preview_detail h4 {
+    margin-top: 50px;
+}
+
+.location_detail {
+    margin-top: 1.5rem;
+}
+
+.location_detail li:first-child {
+    color: #FF6A79;
+}
+
+.location_detail li:last-child {
+    text-align: center;
+}
+
+.location_detail li {
+    padding: 15px 0px;
+    border-bottom: 1px dotted #666;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+ul.location_detail span:nth-child(even) {
+    color: #98B716;
+}
+
+.location_detail span {
+    color: rgba(102, 102, 102, 0.8);
+}
+
+h4.contentDetail {
+    color: #98B716;
+    font-weight: bolder; 
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 18px;
+}
+
+ul.program_detail>li {
+    list-style: none;
+}
+
+div.leftCircle {
+    position: relative;
+}
+
+div.leftCircle ul li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 99px;
+    position: absolute;
+    margin-top:10px ;
+    background: #93b021;
+    left: 0px;
+    list-style: disc;
+}
+
+.program_detail li {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.preview_choice {
+    margin-left: 40px;
+}
+
+.preview_choice>form {
+ margin-top: 3rem;
+}
+
+.preview_choice>form>button {
+ margin:auto;
+}
+
+.preview_choice div.formTime,div.formCount {
+    margin-left:2.5%;
+}
+
+div h5[class="formTo"]{
+    display: inline-block;
+    font-weight: 600;
+    color:#666;
+}
+
+/* 共有 */
+.preview_choice button.adultCount, .preview_choice button.childCount {
+    border-radius:2px;
+    color:#ffffff;
+    font-size:18px;
+    font-weight: 600;
+    text-align:center;
+    line-height:40px;
+    width:95%;
+    height:40px;
+    margin-bottom:15px;
+    margin-left:2.5%;
+}
+
+.preview_choice button.adultCount {
+    background-color:#fba929;
+    border:1px solid #fba929;
+    margin-top:10px;
+}
+
+.preview_choice button.childCount {
+    background-color:#999999;
+    border:1px solid #999999;
+}
+
+.preview_choice h4 {
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 2rem;
+    color:#6ac13c;
+}
+
+.preview_choice span {
+    margin-left: 20px;
+}
+
+.preview_choice button {
+    display: block;
+    outline: none;
+    height: 50px;
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    background-color:#6ac13c;
+    color: #ffffff;
+}
+
+.review {
+    margin-top: 100px;
+    width: 700px;
+}
+
+.review_title a {
+    font-size: 14px;
+}
+
+.review_content {
+    margin-top: 30px;
+}
+
+.review_user span {
+    margin-right: 10px;
+}
+
+.review_area {
+    margin-top: 20px;
+    width: 700px;
+    height: 230px;
+    background-color: #f6f6f6;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+}
+
+.review_area h5 {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.review_area p {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.review_area li {
+    display: inline-block;
+    margin-left: 15px;
+    width: 100px;
+    height: 65px;
+    background-color: pink;
+}
+
+.review_area em {
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+/* 點選圖_開始 */
+
+#photoViewer{
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+#photoViewer.is-loading::before{
+   content: url(/images/logo-w.png);
+   position: absolute;
+   top: 0px;
+   left: 0px;
+}
+
+#photoViewer img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 8px;
+}
+
+.imgChoose{
+    padding-left: 20px;
+    width: 40vw;
+    margin-top: 10px;
+}
+.imgChoose img {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+}
+a.active{
+    opacity: 0.3;
+}
+/* 點選圖_結束 */
+
+/* 日曆_開始 */
+.calendar {
+    margin:auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 475px;
+    height: 420px;
+    background-color: #fff;
+    box-shadow: 0 3px 15px rgba(0,0,0,.15);
+    border-radius: 8px;
+    border:1px solid rgb(221, 221, 221);
+}
+
+.title{
+    text-align: center;
+}
+
+.body-list ul {
+    width: 100%;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.body-list ul li {
+    width: 14.28%;
+    height: 36px;
+    line-height: 30px;
+    list-style-type: none;
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+}
+
+.body-list ul li.darkgreyAli, #greenbox {
+    cursor: pointer;
+}
+
+.body-list ul li.lightgrey {
+    cursor: not-allowed;
+}
+
+.lightgrey {
+    color: #a8a8a8;
+    /*浅灰色*/
+}
+
+.darkgrey {
+    color: #565656;
+    /*深灰色*/
+}
+
+ul li.darkgreyAli:hover {
+	color: #565656;
+	background-color:#6bc13c6b;
+}
+
+div.title .green,.green_small {
+    color: #6ac13c;
+}
+
+#greenbox {
+    color: #6ac13c;
+    border: 1.5px solid #6ac13c;
+}
+
+a#prev,a#next{
+	margin: 0px 30px;
+	text-decoration:none;
+}
+
+a#prev img,a#next img{
+	width: 30px;
+	height: 30px;
+}
+/* 日曆_結束 */
+
+div.formTime input.btn-success, div.formTime select.btn-success, div.formCount select.btn-success {
+    color: #6ac13c;
+    background-color: #fff;
+    border: 1.5px solid #6ac13c;
+    border-radius: 4px;
+    width: 120px;
+    height: 50px;
+    margin-right: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+div.formTime input.btn-success:hover {
+    background-color: #6ac13c;
+    border: 1.5px solid #6ac13c;
+    color: #fff;
+}
+
+div.formTime select.btn-success:hover {
+    background-color: #6ac13c;
+    border: 1.5px solid #6ac13c;
+    color: #fff;
+}
+
+div.formCount select.btn-success:hover {
+    background-color: #6ac13c;
+    border: 1.5px solid #6ac13c;
+    color: #fff;
+}
+
+.formCount div.form-group {
+    clear: both;
+}
+
+.preview_choice form button.goCart:hover {
+    background-color: #2D4D26;
+}

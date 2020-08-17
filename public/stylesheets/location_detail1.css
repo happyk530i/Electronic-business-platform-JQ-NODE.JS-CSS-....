@@ -1,0 +1,252 @@
+li{
+    font-size: 1.2rem;
+}
+li>span{
+    color: blue;
+}
+.de_container {
+    padding-top: 50px;
+}
+.preview_content{
+    width:600px;
+}
+
+.crumb_wrap {
+    height: 45px;
+}
+
+.crumb_wrap a {
+    margin-right: 10px;
+}
+
+.preview_wrap {
+    border-radius: 10px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.preview_wrap img {
+    height: 400px;
+    width: 100%;
+}
+
+.preview_detail {
+    width: 5    00px;
+}
+
+.preview_detail h4 {
+    margin-top: 50px;
+}
+
+.location_detail {
+    margin-top: 40px;
+}
+
+.location_detail li {
+    padding: 20px 0px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.location_detail span {
+    margin-right: 40px;
+}
+
+.program_detail li {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    list-style: disc;
+}
+
+/* .preview_choice {
+    width: 350px;
+    height: 200px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+} */
+.preview_choice {
+    position: absolute;
+    margin-left: 40px;
+}
+.preview_choice>form{
+ margin-top: 30px;
+}
+.preview_choice>form>button{
+ margin:auto;
+}
+
+.preview_choice h4 {
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 2rem;
+    color:blue;
+}
+
+.preview_choice span {
+    margin-left: 20px;
+}
+
+.preview_choice button {
+    display: block;
+    outline: none;
+    height: 50px;
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    background-color: #26bec9;
+    color: #ffffff;
+}
+
+.review {
+    margin-top: 100px;
+    width: 700px;
+}
+
+.review_title a {
+    font-size: 14px;
+}
+
+.review_content {
+    margin-top: 30px;
+}
+
+.review_user span {
+    margin-right: 10px;
+}
+
+.review_area {
+    margin-top: 20px;
+    width: 700px;
+    height: 230px;
+    background-color: #f6f6f6;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+}
+
+.review_area h5 {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.review_area p {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.review_area li {
+    display: inline-block;
+    margin-left: 15px;
+    width: 100px;
+    height: 65px;
+    background-color: pink;
+}
+
+.review_area em {
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+/* 點選圖_開始 */
+
+#photoViewer{
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+#photoViewer.is-loading::after{
+   content: url(/images/logo-w.png);
+   position: absolute;
+   top: 0px;
+   left: 0px;
+}
+#photoViewer img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 15px;
+   
+}
+.imgChoose{
+    padding-left: 20px;
+    width: 40vw;
+    margin-top: 10px;
+}
+.imgChoose img {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+}
+a.active{
+    opacity: 0.3;
+}
+/* 點選圖_結束 */
+/* 日曆_開始 */
+.calendar {
+    margin: auto;;
+    width: 475px;
+    height: 375px;
+    background: #fff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+.title{
+    text-align: center;
+}
+
+.body-list ul {
+    width: 100%;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.body-list ul li {
+    width: 14.28%;
+    height: 36px;
+    line-height: 36px;
+    list-style-type: none;
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+}
+
+.lightgrey {
+    color: #a8a8a8;
+    /*浅灰色*/
+}
+.lightgrey:hover {
+    color: #a8a8a8;
+    background-color: royalblue;
+    /*浅灰色*/
+}
+
+.darkgrey {
+    color: #565656;
+    /*深灰色*/
+}
+.darkgrey:hover {
+    color: #565656;
+    background-color: rgb(28, 151, 44);
+    /*深灰色*/
+}
+
+.green {
+    color: #6ac13c;
+    /*绿色*/
+}
+
+.greenbox {
+    border: 1px solid #6ac13c;
+    background: #e9f8df;
+    /*浅绿色背景*/
+}
+/* 日曆_結束 */

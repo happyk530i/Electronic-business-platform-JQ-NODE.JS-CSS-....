@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問導遊 - 尋找私人導遊的專屬平台</title>
+    <!-- 引用css、Bootstrap、 jQuery 與 popper -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/guide_detail.css">
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/popper.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/guide_detail.js"></script>
+</head>
+
+<body>
+    <%- include mod_header -%>
+
+
+    <!-- header end -->
+    <div class="container">
+        <!-- 詳細預覽模塊 -->
+        <div class="de_container">
+            <iv class="preview row row-cols-md-2">
+                <div class="preview_img col-md-6">
+                    <img src="/images/guide/<%=title.memberPic%>" alt="">
+                </div>
+                <div class="preview_de col-md-6">
+                    <h3><%=title.memberName%></h3>
+                        <ul style="height: 100%;" class="px-3">
+                            <h5 class="viewInt">
+                                地區：
+                            </h5>
+                            <li>
+                                <%=title.guideSide%>
+                            </li>
+                            <br>
+                            <h5 class="viewInt">
+                                專長：
+                            </h5>
+                            <li>
+                                <%=title.guideBest%>
+                            </li>
+                            <br>
+                            <h5 class="viewInt">
+                                Email：
+                            </h5>
+                            <li>
+                                <%=title.memberEmail%>
+                            </li>
+                            <br>
+                            <h5 class="viewInt">
+                                介紹：
+                            </h5>
+                            <li class="viewIntroduce">
+                                <%=title.guideInfo%>
+                            </li>
+                        </ul>
+                </div>
+                <div class="decorate"></div>
+            </div>
+        </div>
+         <!-- ## 詳細預覽模塊 -->
+
+        <!-- 自述評價模塊 -->
+        <div class="review">
+            <div class="tab_list">
+                <ul>
+                    <li class="first_tab current">導遊的留言</li>
+                    <li class="second_tab">遊客的留言/評價</li>
+                </ul>
+            </div>
+            <div class="tab_con">
+                <p class="introduce">I have a Bachelor of Science in Agribusiness Management. I was a writer in the
+                    University school magazine and I hosted school events. In high school, I won English broadcasting
+                    awards. My hobbies are playing the guitar, playing the piano,
+                    singing and doing yoga. I used to read a lot of books when I had a lot of free time. I have been
+                    teaching English online for three years. I love English and I love teaching so it’s a perfect
+                    combination.</p>
+            </div>
+            <div class="tab_con" style="display: none">
+                <div class="tab_box">
+                    <div class="rate_box fl">
+                        <em class="rate_num">5.00</em>
+                    </div>
+                        <ul class="rate_star fl">
+                            <li>
+                                <span></span>5
+                                    <div class="bar">
+                                        <div class="bar_in">
+                                        </div>
+                                    </div>
+                                        <em>5</em>
+                            </li>
+                            <li>
+                                <span></span>4
+                                    <div class="bar">
+                                        <div class="bar_in">
+                                        </div>
+                                    </div>
+                                        <em>4</em>
+                            </li>
+                            <li>
+                                <span></span>3
+                                    <div class="bar">
+                                        <div class="bar_in">
+                                        </div>
+                                    </div>
+                                        <em>3</em>
+                            </li>
+                            <li>
+                                <span></span>2
+                                    <div class="bar">
+                                        <div class="bar_in">
+                                        </div>
+                                    </div>
+                                        <em>2</em>
+                            </li>
+                            <li class="no1">
+                                <span></span>1
+                                    <div class="bar">
+                                        <div class="bar_in">
+                                        </div>
+                                    </div>
+                                        <em>0</em>
+                            </li>
+                        </ul>
+                </div>
+                <p class="tab_com">該導遊沒有任何的評價。</p>
+            </div>
+        </div>
+        <!-- ## 自述評價模塊 -->
+
+        <!-- 行程模塊 -->
+        <div class="schedule">
+            <ul class="sc_title">
+                <li>行程名稱</li>
+                <li>時間</li>
+                <li>地點</li>
+                <li>限制人數</li>
+                <li>行程簡介</li>
+            </ul>
+            <ul class="sc_con">
+                <li>
+                    <a href="javascript:;">
+                        <img src="/images/trip/<%=title.tripPic1%>" alt="">
+                            <em><%=title.tripName%></em>
+                    </a>
+                </li>
+                <li> 
+                    <span><%=title.tripTime%></span> 
+                </li>
+                <li> 
+                    <span><%=title.tirpCity%>
+                    </span> 
+                </li>
+                <li> 
+                    <span><%=title.peoMost%>
+                    </span>
+                </li>
+                <li>
+                    <p><%=title.tripIntroduce%></p>
+                </li>
+                    <a href="/trip/location_detail?id=<%=title.tripId-1%>"><button> 點我詳情</button></a>
+            </ul>
+        </div>
+        <!-- ## 行程模塊 -->
+    </div>
+    <!-- ## 詳細頁內容 end -->
+
+
+    <!-- footer start -->
+    <div class="footer">
+        <div class="links">
+            <dl>
+                <dt>認識問導遊</dt>
+                <dd><a href="#">關於我們</a></dd>
+                <dd><a href="#">管理團隊</a></dd>
+                <dd><a href="#">人才招募</a></dd>
+                <dd><a href="#">客戶服務</a></dd>
+                <dd><a href="#">幫助</a></dd>
+            </dl>
+            <dl>
+                <dt>給旅人</dt>
+                <dd><a href="#">三大保證</a></dd>
+                <dd><a href="#">官方部落格</a></dd>
+                <dd><a href="#">會員好禮</a></dd>
+            </dl>
+            <dl>
+                <dt>合作夥伴</dt>
+                <dd><a href="#">合作夥伴</a></dd>
+                <dd><a href="#">成為導遊</a></dd>
+                <dd><a href="#">同業合作</a></dd>
+                <dd><a href="#">聯盟行銷</a></dd>
+                <dd><a href="#">旅遊客製規劃</a></dd>
+            </dl>
+        </div>
+    </div>
+
+</body>
+
+</html>

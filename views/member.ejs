@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問導遊 - 尋找私人導遊的專屬平台</title>
+    <!-- FAVIOCN -->
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+
+    <!-- 引用css、Bootstrap、 jQuery 與 popper -->
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/member.css">
+    <link rel="stylesheet" href="/stylesheets/jquery.toast.css">
+
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/jquery.toast.js"></script>
+  
+    
+</head>
+<body>
+<%- include mod_header -%>
+
+<!-- 會員介面 start -->
+<div class="me_content container clearfix">
+    <div class="slidebar">
+        <div class="head_icon">
+            <img src="/images/add_guide4.jpg" alt="">
+        </div>
+      
+        <!-- <form action="/upload_file" method="post" enctype="multipart/form-data">
+            <input style="width: 15px ; height: 15px"   type="file" name="myfile" accept="image/*">
+            <input style="width: 15px ; height: 15px"  type="submit" value="上傳檔案">
+        </form> -->
+        
+        
+        <span class=" pett   mem_name">登入帳號: <%=  userName %> </span>
+       
+        
+        
+
+        <ul class="   mem_list">
+            <li>
+                <a href="javascript:;">帳號設定</a>
+            </li>
+            <li>
+                <a class="pet img-thumbnail" href="/historyshopcart">歷史訂單</a>
+            </li>
+            <li>
+                <!-- <a href="javascript:;"></a>
+            </li>
+            <li>
+                <a href="javascript:;">我的收藏</a>
+            </li>
+          -->
+        </ul>
+    </div>
+    <div class="content">
+        <h4>帳號設定</h4>
+       
+        <form  id="form1" name="form1" method="post"   action="">
+        <ul class="content_tab">
+            <li>基本資料</li>
+        </ul>
+        <ul class="content_info">
+          
+            <li>
+                <span>真實姓名<i></i></span>
+                <input class="pet img-thumbnail" type="text" name="txtRealName" id="txtRealName"  value="<%= RealName %>" >
+          
+            </li>
+            <li>
+                <span >性別</span>
+                <select class="pet img-thumbnail">
+                    <option >請選擇</option>
+                    <option >男性</option>
+                    <option>女性</option>
+                </select>
+              
+                
+                
+    
+            </li>
+            
+            <li>
+                <span>電話號碼<i></i></span>
+                <input class="pet img-thumbnail" class="pet" class="over" type="text"  name="txtUserName" id="txtUserName" value="<%= UserName %>" >
+            </li>
+            <li>
+                <span>喜愛地點</span>
+                <input  class="pet img-thumbnail" type="text"name="txtSide" id="txtSide" value="<%= Side %>">
+            </li>
+              <li>
+                <span>身分證號碼</span>
+                <input  class="pet img-thumbnail" type="text">
+            </li>
+            <li>
+                <span>出生日期</span>
+                <input class="pet img-thumbnail" type="text">
+            </li>
+            <li>
+                <span>旅行偏好</span>
+                <input class="pet img-thumbnail" type="text" name="txtMemberLike" id="txtMemberLike" value="<%= MemberLike %>">
+            </li>
+            <li>
+                <span>英文姓(同護照)</span>
+                <input type="text">
+            </li>
+            <li class="email">
+                <span>電子信箱<i>*</i></span>
+                <input class="pet img-thumbnail"  type="text" name="txtMeail" id="txtMeail"  value="<%= Meail %>">
+            </li>
+            <li>
+                <input  id="pettt" type="submit" value="確認" class="over">
+            </li>
+        </ul>
+    </form>
+    </div>
+</div>
+<!-- 會員介面 end -->
+<!-- footer start -->
+<div class="footer">
+    <div class="links">
+        <dl>
+            <dt>認識問導遊</dt>
+            <dd><a href="#">關於我們</a></dd>
+            <dd><a href="#">管理團隊</a></dd>
+            <dd><a href="#">人才招募</a></dd>
+            <dd><a href="#">客戶服務</a></dd>
+            <dd><a href="#">幫助</a></dd>
+        </dl>
+        <dl>
+            <dt>給旅人</dt>
+            <dd><a href="#">三大保證</a></dd>
+            <dd><a href="#">官方部落格</a></dd>
+            <dd><a href="#">會員好禮</a></dd>
+        </dl>
+        <dl>
+            <dt>合作夥伴</dt>
+            <dd><a href="#">合作夥伴</a></dd>
+            <dd><a href="#">成為導遊</a></dd>
+            <dd><a href="#">同業合作</a></dd>
+            <dd><a href="#">聯盟行銷</a></dd>
+            <dd><a href="#">旅遊客製規劃</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+
+<script>
+    function showToast(heading, message) {
+        $.toast({
+            text: message, // Text that is to be shown in the toast
+            heading: heading, // Optional heading to be shown on the toast
+            icon: 'info', // Type of toast icon
+            showHideTransition: 'fade', // fade, slide or plain
+            allowToastClose: true, // Boolean value true or false
+            hideAfter: 2200, // false to make it sticky or number representing the miliseconds as time after which toast needs to be hidden
+            stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
+            position: 'top-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
+            textAlign: 'left',  // Text alignment i.e. left, right or center
+            loader: true,  // Whether to show loader or not. True by default
+            loaderBg: '	#EAC100',  // Background color of the toast loader
+            beforeShow: function () { }, // will be triggered before the toast is shown
+            afterShown: function () { }, // will be triggered after the toat has been shown
+            beforeHide: function () { }, // will be triggered before the toast gets hidden
+            afterHidden: function () { }  // will be triggered after the toast has been hidden
+        });
+    }
+    
+    $(function () {
+        $(".pet").mouseenter(function () {
+        $(this).removeClass("img-thumbnail");
+    })
+
+    $(".pet").mouseleave(function () {
+        $(this).addClass("img-thumbnail");
+    })
+    
+        showToast(" 貴賓   <%= RealName%>   您好 ", "您可以修改基本資料");
+      
+  $(".pett").click(function () {
+       
+       showToast(  " 帳號  <%=  userName %>", "無法做修改 歡迎請洽客服")
+   })
+
+        $( "#pettt" ).click(function() {
+  alert( "更新完成" );
+
+
+  
+});
+
+
+
+})
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

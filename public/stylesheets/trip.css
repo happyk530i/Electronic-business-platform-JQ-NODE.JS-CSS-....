@@ -1,0 +1,640 @@
+:root {
+    --textcolor_1: #F8B417;
+    --textstyle:bold;
+
+    --textcolor_2:#98B716;
+    --textcolor_3: #2D4D26;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* 去除掉button點擊時的預設黑色邊框 */
+button[class] {
+	border-style: none;
+	outline: none;
+}
+
+/* jQuery */
+/* .hiddenDiv {
+    top: -90px;
+} */
+
+/* .displayDiv {
+    top:0;
+    z-index: 9999;
+} */
+/* --- jQuery --- */ 
+  
+
+/* ---------------------- content 內文區 -------------------------------- */
+
+/* GoTop */
+div#gotop {
+    position: fixed;
+    z-index:2000;
+    right:30px;
+    bottom:50px;
+    width:60px;
+    height:60px;
+    color:#fff;
+    background-color:var(--textcolor_2);
+    line-height:50px;
+    border-radius:50%;
+    transition:all 0.5s;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+/* video */
+/* bootstrap : container-fluid 預設 內距padding 左右各會留15px */
+div.video-Wrap {
+   padding-right: 0px;
+   padding-left: 0px;
+   position: relative;
+   width: 100%;
+   min-height:100vh;
+   overflow: hidden;
+}
+
+#player {
+   display: block;
+   position: absolute;
+   object-fit: cover;
+}
+
+/* search */
+.bgGreen {
+    background-color: var( --textcolor_2);
+    width: 100%;
+    /* 相等於 bootstrap 的 p-5 */
+    padding-bottom: 3rem;
+    /* 配合 a.line */
+    position: relative;
+}
+
+h2.titleHeader, h4.journeyText {
+    color: var( --textcolor_3);
+    font-weight: var( --textstyle);
+}
+
+h2.titleHeader {
+    text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
+}
+
+/* 豎線 */
+div.line {
+    position: absolute;
+    width: 50%;
+    height: 70px;
+    border-right: solid var( --textcolor_1) 4px;
+    animation: myanimation 0.6s  linear infinite alternate; 
+}
+
+div.line:hover {
+    cursor: pointer;
+}
+
+@keyframes myanimation {
+    0% {top: 80%;}
+    25% {top: 90%;}
+    50% {top: 100%;}
+    75% {top: 90%;}
+    100% {top: 80%;}
+}
+
+@media (max-width: 768px) {
+   
+    @keyframes myanimation {
+        0% {top: 85%;}
+        25% {top: 90%;}
+        50% {top: 95%;}
+        75% {top: 90%;}
+        100% {top: 85%;}
+    }
+}
+
+/* 共有 */
+.bgGray, .bgWhite{
+    width: 100%;
+    margin-top: 50px;
+}
+
+h5.tripHeadLine {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 近期新增的活動 */
+div.bgGray, div.bgSuitGray_2 {
+    background-color: #DEDEDE;
+}
+
+.bgGray {
+    z-index: -1;
+}
+
+/* 圖示 - 三角形 */
+div.titleTriangle {
+    width: 30px;
+    height: 30px;
+    margin-top: 50px;
+    background-color: var( --textcolor_1);
+    display: inline-block;
+    clip-path: polygon(100% 100%, 0% 100%, 100% 0);
+}
+
+h4.addActive, h4.journey, h5.addtrip, h5.popularGuide, p.bgWhiteText {
+    color: var( --textcolor_2);
+    font-weight: var( --textstyle);
+}
+
+div.New {
+    position: absolute;
+    margin-top: -5%;
+    margin-left: -5%;
+    z-index: 10;
+    width: 40%;
+    height: 40%;
+}
+
+img.addTripImg, img.addGuideImg, img.suitGuideImg {
+   object-fit: cover;
+}
+
+img.addTripImg {
+    height:40vh; 
+}
+
+img.addGuideImg, img.suitGuideImg {
+    height:35vh;
+}
+
+#effects div .card:hover {
+    opacity: 0.8;
+    box-shadow: 0 3px 15px rgba(0,0,0,.15);
+}
+
+/* 共有 */
+div.bottomContent, div.suitGuide{
+    background-color: #FFD77A;
+}
+
+div.bottomContent_2 {
+    background-color: #FF6A79;
+}
+
+/* three button */
+div.threeBtn, .arrowBtn {
+    width: 100%;
+    text-align: center;
+}
+
+div.threeBtn {
+    margin-top: 0px;
+    padding-bottom: 50px;
+}
+
+div.threeBtn button {
+    border-radius: 30px;
+    border: none;
+    width: 18px;
+    height: 18px;
+    margin: 0px 7px;
+    background-color: #ffffff;
+}
+
+div.threeBtn button:hover {
+    background-color: var( --textcolor_1);
+}
+
+div.threeBtn button.selected {
+    background-color: var( --textcolor_1);
+}
+
+
+
+
+/* 熱門導遊 */
+p.guideArea_A {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+p.guideArea_A {
+    margin-bottom: 10px;
+}
+
+p.guideLike {
+    margin-bottom: -5px;
+    color: #F64000; 
+    font-size: 14px;
+    font-weight: 500;
+}
+
+div.whiteLine {
+    border: solid 3px #ffffff;
+    margin: -20px -10px 20px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+}
+
+div.bgImgYellow, .bgImgYellow_2 {
+    background-color: #FFD77A;
+    width: 300px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    margin:0 auto;
+}
+
+div.bgImgYellow {
+    padding-top: 25px;
+}
+
+div.bgImgYellow_2 {
+    padding-bottom: 25px;
+}
+  
+img.guideImg {
+    width: 280px; 
+    height:220px ; 
+    object-fit: cover;
+}
+
+div.yeGuideCard {
+    max-width: 18rem;
+    margin: auto;
+}
+
+#effect div:hover {
+    opacity: 0.9;
+}
+
+/* button arrow */
+div.arrowBtn {
+    margin-top: -50px;
+    padding-bottom: 0px;
+}
+
+div.arrowBtn button {
+    border-radius: 100%;
+    margin: 0 15%;
+}
+
+div.arrowBtn button:hover {
+    background-color: #ffffff;
+    box-shadow: 0 3px 15px rgba(0,0,0,.15);
+}
+
+/* bg - white過場 */
+.bgWhite {
+    background-color: #ffffff;
+}
+
+img.bgWhiteImg {
+    width: 250px;
+}
+
+div.titleContent {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+p.bgWhiteText, span.smallText {
+    text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.35);
+}
+
+span.smallText {
+    font-size: 30px;
+    color: var( --textcolor_1);
+}
+
+/* 行程分類 */
+#loopBtn{
+    width: 989px;
+    height: 400px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#loopBtn ul{
+    list-style: none;
+}
+
+#loopBtn .imgUl li{
+    position: absolute;
+    background-color:var( --textcolor_3);
+}
+
+#loopBtn li img{
+    width: 100%;
+    height: 100%;
+}
+
+#loopBtn .myBtn .left{
+    position: absolute;
+    width: 270px;
+    height: 223px;
+    top:26px;
+    left:1px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#loopBtn .myBtn .right{
+    position: absolute;
+    width: 260px;
+    height: 223px;
+    top:26px;
+    right:1px;
+    z-index: 1000;
+    cursor: pointer;
+    
+}
+
+#loopBtn li.no0{
+    width: 174px;
+    height:122px;
+    left:-116px;
+    top:100px;
+    z-index: 777;
+}
+
+#loopBtn li.no1{
+    width: 356px;
+    height:223px;
+    left:0px;
+    top:26px;
+    z-index: 888;
+}
+
+#loopBtn li.no2{
+    width: 445px;
+    height:300px;
+    left:274px;
+    top:0px;
+    z-index: 999;
+    background-color:var( --textcolor_2);
+}
+
+#loopBtn li.no3{
+    width: 356px;
+    height:223px;
+    left:634px;
+    top:26px;
+    z-index: 888;
+}
+
+#loopBtn li.no4{
+    width: 174px;
+    height:122px;
+    left:897px;
+    top:100px;
+    z-index: 777;
+}
+
+#loopBtn li.no1 img , #loopBtn li.no3 img{
+    opacity: 0.5;
+}
+
+.journeyImg {
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    padding: 10px;
+}
+
+/* five button */
+#loopBtn .tipDot{
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: 350px;
+    left: 42%;
+}
+
+#loopBtn .tipDot ul li{
+    float: left;
+    width: 18px;
+    height: 18px;
+    background-color: lightgray;
+    margin: 0px 7px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#loopBtn .tipDot ul li.cur{
+    background-color:var( --textcolor_1);
+}
+
+/* 尋找適合的導遊 */
+p.guideTroduce {
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+div#bgFitGuide {
+    position: relative;
+}
+
+div.bgFitGuideImg {
+    position: absolute;
+    bottom: 2%;
+    opacity: 0.85;
+}
+
+div.bgCircleArea {
+    width: 450px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    border: 0px;
+    padding: 6px 50px;
+    bottom: 25px;
+}
+
+ul li button.areaConnect {
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #666;
+    border-radius: 0px;
+    background: transparent;
+    border: 0px;
+}
+
+ul li button.areaConnect:hover {
+    color: var( --textcolor_2);
+}
+
+ul li button.areaConnect.selected {
+    color: var( --textcolor_2);
+}
+
+h4.areaGuide {
+    font-weight:var( --textstyle);
+    line-height: 80px;
+}
+
+#suitGuideHov div.suitGuide {
+    width: 60% ;
+    height:100px; 
+    margin: auto;
+}
+
+#suitGuideHov a .card:hover {
+    background-color: var( --textcolor_1);
+}
+
+#suitGuideHov_1 a .card {
+    /* transition:all 0.5s ease 0s 為圖片放大所需的時間和特效 */
+    transition: all 0.5s ease 0s;
+}
+
+#suitGuideHov_1 a .card:hover {
+    opacity: 0.8;
+    box-shadow: 0 3px 15px rgba(0,0,0,.15);
+     /* transform: scale 圖片放大的倍率 */
+     -moz-transform: scale(1.05);
+     -ms-transform: scale(1.05);
+     -o-transform: scale(1.05);
+     -webkit-transform: scale(1.05);
+     transform: scale(1.05);
+}
+
+div#selGuideBtn {
+    text-align: right;
+    margin-bottom: 2px;
+}
+
+/* map */
+div.map_bg {
+    position: relative;
+    background-color: #FFD77A;
+    width: 450px;
+    height: 450px;
+    padding: 25px;
+}
+
+iframe {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border: 0;
+    box-shadow: inset;
+}
+
+/* ----------------------------------------------------------------------- */
+
+/* ------------圖片輪播 - carousel ------------- */
+
+@media (min-width: 768px) {
+
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item  {
+        display: block;
+    }
+    
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0.5rem;
+        right: -25%;
+        z-index: 1;
+        display: block;
+        visibility: visible;
+    }
+    
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0.5rem;
+        left: 0;
+        z-index: 1;
+        display: block;
+        visibility: visible;
+    }
+    
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+}
+
+ /* Bootstrap Lightbox using Modal */
+
+#profile-grid { overflow: auto; white-space: normal; } 
+#profile-grid .profile { padding-bottom: 40px; }
+#profile-grid .panel { padding: 0 }
+#profile-grid .panel-body { padding: 15px }
+#profile-grid .profile-name { font-weight: bold; }
+#profile-grid .thumbnail {margin-bottom:6px;}
+#profile-grid .panel-thumbnail { overflow: hidden; }
+#profile-grid .img-rounded { border-radius: 4px 4px 0 0;}
+
+a.carousel-control-prev, a.carousel-control-next {
+   opacity: 1;
+}
+
+#carouselExample {
+    padding-bottom: 50px;
+}
+
+.carousel-control-prev button.preArrow, .carousel-control-next button.nextArrow {
+    top: 20px;
+    border-radius: 100%;
+}
+
+.carousel-control-prev button.preArrow, .carousel-control-next button.nextArrow:hover {
+    border-radius: 100%;
+    background-color: #ffffffb4;
+    box-shadow: 0 3px 15px rgba(0,0,0,.15);
+} 
+
+/* div.arrowBtn {
+    width: 50%;
+    margin: auto;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    position: relative;
+} */
+

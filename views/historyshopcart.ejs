@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問導遊 - 尋找私人導遊的專屬平台</title>
+
+    <!-- FAVIOCN -->
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+
+    <!-- 引用css、Bootstrap、 jQuery 與 popper -->
+    <link rel="stylesheet" href="/stylesheets/common.css" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/trip.css">
+    <link rel="stylesheet" href="/owl/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/owl/assets/owl.theme.default.min.css">
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/owl/owl.carousel.min.js"></script>
+    <script src="/javascripts/popper.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <!-- <script src="/javascripts/yo_shopcart.js"></script> -->
+    <link rel="stylesheet" href="/stylesheets/yo_shopcart copy.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <%- include mod_header -%>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- 購物車_開始 -->
+    <!-- 購物車流程 -->
+    <div class="container">
+        <ol id="" class="breadcrumb">
+            <li class="active mr-3" style="color:#98B716; font-weight:bold;">
+                <img src="/images/icon/PNG/16px/059-cart.png" alt=""> 歷史紀錄
+            </li>
+            <!-- <li>
+                <img src="/images/icon/PNG/16px/007-pencil2.png" alt=""> 消費詳細入
+            </li> -->
+            <li>
+                <img src="/images/icon/PNG/16px/273-checkmark.png" alt=""> 查詢完成
+            </li>
+        </ol>
+    </div>
+    <div class="container cartItem">
+        <!-- 購物車標題 -->
+        <div class="cartHead">
+            <div>
+                <h3 class="history">歷史紀錄</h3>
+            </div>
+
+            <div class="cartTitle row row-cols-6">
+                <div class="col-1"></div>
+                <div class="col-3">商品名稱</div>
+                <div class="col-2">時間</div>
+                <div class="col-2">人數</div>
+                <div class="col-2">價錢</div>
+                <div class="col-2">備註</div>
+            </div>
+
+        </div>
+
+        <!-- 購物車內容 -->
+        <!-- 第一筆選項開始 -->
+        <form  action="" method="">
+            
+            <% for(var i=0; i<title.length; i++) { %> 
+
+            <div class="cartBody row row-cols-6">
+                <!-- checkbox -->
+                <div class="col-1 cartCheck">
+                    <input class="" type="checkbox" name="shopItem" id="">
+                </div>
+                <!-- 商品名稱 -->
+                <div class="col-3">
+                    <div class="cartBodyPhoto">
+                        <img class="" src="/images/trip/trip15_1.jpg" alt="I am">
+                    </div>
+                </div>
+                <!-- 時間 -->
+                <div class="col-2 cartBodyTime">
+                    <p class="mt" ><%=title[i].preTripDate%></p>
+                    <p class="mt">場次：<%=title[i].preTripTime%></p>
+                </div>
+                <!-- 人數 -->
+                <div class="col-2">
+                    <p class="mt">成人 x<%=title[i].tripId%></p>
+                </div>
+                <!-- 價錢 -->
+                <div class="col-2">
+                    <h6 class="mt">Travel Pints:<%=title[i].tripPrice*0.02%></h6>
+                </div>
+                <!-- 備註 -->
+                <div class="col-2 cartBodyTitle">
+                    <a href="#">
+                        <h6 class="mt"></h6>
+                    </a>
+                    <a href="#" >
+                        <h6 class="mt"><%=title[i].tripNeed%></h6>
+                    </a>
+                </div>
+                
+                <!-- <div class="col-2 ">
+                    <a href=""><img class="mt" src="../../public/links/IcoMoon-Free-master/SVG/219-heart - 複製.svg"
+                            alt=""></a>&emsp;
+                    <a href=""><img class="mt" src="../../public/links/IcoMoon-Free-master/SVG/173-bin.svg" alt=""></a>
+                </div> -->
+            </div>
+            <% } %>
+
+            <!-- 第二筆選項開始 -->
+            <!-- <div class=" cartBody row">
+                <div class="col-1 cartCheck" style="">
+                    <input class="" type="checkbox" name="shopItem" id="">
+                </div>
+                <div class="col-2 cartBodyPhoto" style="">
+
+                    <img class="img-fluid" src="/images/trip2_1.jpg" alt="I am " style="">
+                </div>
+                <div class="col-2 cartBodyTitle" style="">
+                    <a href="#">
+                        <h6 class="mt">台灣澎湖｜海洋牧場鮮蚵吃到飽｜澎湖海上牧場垂釣樂</h6>
+                    </a>
+                    <a href="#">
+                        <h6 class="mt">海洋牧場體驗</h6>
+                    </a>
+                </div>
+                <div class="col-2" style="">
+                    <p class="mt">2020-07-17</p>
+                    <p class="mt">場次：14:00</p>
+                </div>
+                <div class="col-2 " style="">
+                    <p class="mt">成人 x 1</p>
+                    <p class="mt">小孩 x 1</p>
+                </div>
+                <div class="col-1" style="">
+                    <h6 class="mt">TWD 340</h6>
+                </div>
+                <div class="col-2 " style="">
+                    <a href=""><img class="mt" src="../../public/links/IcoMoon-Free-master/SVG/219-heart - 複製.svg"
+                            alt=""></a>&emsp;
+                    <a href=""><img class="mt" src="../../public/links/IcoMoon-Free-master/SVG/173-bin.svg" alt=""></a>
+                </div>
+            </div> -->
+
+            <!-- 購物車結帳 -->
+            <div class="cartFooter row row-cols-4">
+                <div class="col-xl-4 col-lg-3 col-md-1 col-sm-2 col-2" style="padding-left: 35px;">
+                    <!-- <input id="checkAll" type="checkbox" name="all"> -->
+                    <!-- <label for="checkAll">&emsp;全部選擇</label>&emsp;|
+                    <label for="checkAll">&emsp;刪除已選項目</label> -->
+                </div>
+
+                <div class="col-xl-4 col-lg-3 col-md-2 col-sm-1 col-2"></div>
+                <div class="col-xl-2 col-lg-3 col-md-5 col-sm-5 col-4">
+                    <h4 style="color: #666;font-weight: 600;">累計歡樂點數</h4>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-4">
+                    <a href="http://127.0.0.1:3000/users/shoppay">
+                        <button class=" btn btn-success">
+                            換購我的點數
+                        </button>
+                    </a>
+                </div>
+            </div>
+       
+        </form>
+
+        <br>
+        <!-- 購物車_結束 -->
+
+        <!-- 輪播商品_開始 -->
+        <h3 class="goodsbill">最多人瀏覽</h3>
+
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <h5>海洋牧場體驗</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip2_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>海洋牧場體驗</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip3_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>海洋牧場體驗</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip4_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>海洋牧場體驗</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip5_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>海洋牧場體驗</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip6_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>海洋牧場體驗</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip7_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>海洋牧場體驗</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip8_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+
+        </div>
+    </div>
+    <!-- 輪播商品_結束 -->
+    <!-- footer start -->
+    <div class="footer">
+        <div class="links">
+            <dl>
+                <dt>認識問導遊</dt>
+                <dd><a href="#">關於我們</a></dd>
+                <dd><a href="#">管理團隊</a></dd>
+                <dd><a href="#">人才招募</a></dd>
+                <dd><a href="#">客戶服務</a></dd>
+                <dd><a href="#">幫助</a></dd>
+            </dl>
+            <dl>
+                <dt>給旅人</dt>
+                <dd><a href="#">三大保證</a></dd>
+                <dd><a href="#">官方部落格</a></dd>
+                <dd><a href="#">會員好禮</a></dd>
+            </dl>
+            <dl>
+                <dt>合作夥伴</dt>
+                <dd><a href="#">合作夥伴</a></dd>
+                <dd><a href="#">成為導遊</a></dd>
+                <dd><a href="#">同業合作</a></dd>
+                <dd><a href="#">聯盟行銷</a></dd>
+                <dd><a href="#">旅遊客製規劃</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!-- footer end -->
+    <!-- 輪播圖控制器 -->
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                stagePadding: 50,
+                loop: true,
+                margin: 20,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    500: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

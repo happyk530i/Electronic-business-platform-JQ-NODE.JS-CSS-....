@@ -1,0 +1,178 @@
+/* 公共樣式 */
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+body {
+    background: url(/images/back_bg.jpg) fixed;
+}
+
+
+/* 字標 */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?7kkyc2');
+    src: url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?7kkyc2') format('truetype'), url('../fonts/icomoon.woff?7kkyc2') format('woff'), url('../fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* header */
+header {
+    position: relative;
+    position: fixed;
+    z-index: 1000;
+    height: 100px;
+    width: 100%!important;
+    background-image:url("../images/back_bg.jpg");
+}
+
+.logo {
+    position: absolute;
+    top: -30px;
+    height: 50px;
+    width: 50px;
+}
+
+.logo span {
+    display: block;
+    width: 120px;
+    font-size: 8px;
+    text-decoration: none;
+}
+
+.search {
+    position: absolute;
+    top: 30px;
+    left: 270px;
+}
+
+.search input {
+    float: left;
+    height: 40px;
+    width: 400px;
+    outline: 0;
+    border: 1px solid #98B716;
+    font-size: 15px;
+    color: #cccccc;
+}
+
+.search input.searchFun {
+    float: left;
+    height: 40px;
+    width: 60px;
+    background-color: #98B716;
+    border: 0px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.login {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.login a, .shortcut li a {
+    color: #fba929;
+    font-size: 18px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+ul.shortcut {
+    position: absolute;
+    top: 30px;
+    right: 120px;
+}
+
+.shortcut li {
+    float: left;
+}
+
+.shortcut li a {
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+/* footer */
+.footer {
+    margin-top: 100px;
+    height: 385px;
+    background: #2D4D26;
+}
+
+.links {
+    float: left;
+    margin-top: 50px;
+}
+
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.links dt {
+    height: 35px;
+    font-size: 16px;
+    color: #f4f4f4;
+}
+
+.links dd a {
+    font-size: 12px;
+    color: #f4f4f4;
+}
+
+.links dd a:hover {
+    color: #F8B417;
+    text-decoration: none;
+}
+
+ul.shortcut li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 10px;
+    width: 0;
+    border-bottom: 4px solid #2D4D26;
+    transition: 0.5s;
+}
+
+ul.shortcut li a.mx-2:hover::after {
+    width: 100%;
+}
+
+div.login a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: -1px;
+    width: 0;
+    border-bottom: 4px solid #2D4D26;
+    transition: 0.5s;
+}
+
+div.login a.mx-2:hover::after {
+    width: 100%;
+}
+
+/* header 樣式 */
+/* jQuery */
+.hiddenDiv {
+    top: -100px;
+    transition: 0.5s;
+}
+
+.displayDiv {
+    top:0;
+    z-index: 9999;
+    transition: 0.5s;
+}
+/* --- jQuery --- */ 

@@ -1,0 +1,73 @@
+<!-- header start -->
+<header>
+  <!-- logo -->
+
+  <div class="logo">
+    <a href="/">
+      <img src="/images/logo-w-after.png" alt="" title="問導遊 - 回首頁">
+    </a>
+  </div>
+
+  <!-- 搜尋欄 -->
+  <div class="search">
+    <input type="search" value="輸入城市、景點、體驗行程或活動名稱..." />
+    <input type="submit" value="搜尋" class="searchFun"></input>
+  </div>
+
+  <!-- 登入/註冊 -->
+  <div class="login pr-3 mt-2">
+
+    <% if( userName == "Guest"){ %>
+
+    <a href="/users/login" class="mx-2">
+      <span>登入</span>
+    </a>
+    <a href="/users/register" class="mx-2">
+      <span>註冊</span>
+    </a>
+
+    <% }else { %>
+
+    <a href="/users/logout" class="mx-2">
+      <span>登出</span>
+    </a>
+    <a href="/users/member" class="mx-2">
+      <span>會員頁</span>
+    </a>
+    <% } %>
+    <!-- <a ><span>Welcome <%=  userName %></span></a> -->
+  </div>
+
+  <!-- 快捷導航 -->
+  <ul class="shortcut pr-3" style="margin-right: 30px;" >
+    <li>
+      <a href="/trip" class="mx-2">
+      選擇你的
+        <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 專屬行程
+      </a>
+    </li>
+    <li>
+      <a href="/guide" class="mx-2">
+      尋找你的
+         <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 專屬導遊
+      </a>
+    </li>
+    <!-- 購物車 -->
+    <li style="width: 20px; margin-right: 80px;">
+      <a href="/users/shopcart" class="mr-5" title="購物車">
+      <img src="/images/supermarket.png" alt="">
+    </a>
+    </li>
+  </ul>
+  
+</header>
+<!-- header end -->
+
+<script>
+  $('.mx-2').on('click', function(){
+        // $('.mx-2').removeClass('selected');
+        $(this).addClass('selected'); 
+      });
+</script>

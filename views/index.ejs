@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>問導遊 - 尋找私人導遊的專屬平台</title>
+
+  <!-- FAVIOCN -->
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <!-- 引用css、Bootstrap、 jQuery 與 popper -->
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/base.css">
+  <link rel="stylesheet" href="/stylesheets/common.css">
+  <link rel="stylesheet" href="/stylesheets/trip.css">
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/popper.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <script src="/javascripts/trip.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+</head>
+
+<body>
+ 
+  <%- include mod_header -%>
+
+
+  <!-- 內文區 -->
+
+  <!-- GoTop -->
+  <a href="">
+    <div id="gotop">
+      <img src="/images/gotop.png" alt="">
+    </div>
+  </a>
+
+  <!-- video 影片區 -->
+  <div class="container-fluid video-Wrap">
+    <!-- 解決 video 影片會自動播放的問題 : https://dometi.com.tw/blog/html5-video-autoplay/ -->
+    <video id="player" width="100%" height="100%" loop="true" autoplay="autoplay" muted="true">
+      <source src="/video/Pexels Videos 1823079.mp4" type="video/mp4">
+    </video>
+  </div>
+  <!-- ## video 影片區 -->
+
+  <!-- search 搜尋區  -->
+  <!-- green background -->
+  <div class="bgGreen">
+    <!-- div - container-->
+    <div class="container">
+      <!-- 大標 -->
+      <h2 class="titleHeader text-center pt-5 pb-3">
+        選擇旅遊夥伴來一趟美好的難忘之旅吧!
+      </h2>
+      <!-- form 表單 -->
+      <form action="/" method="POST">
+        <div class="form-row pb-3">
+
+          <!-- Q1.尋找類型 State -->
+          <div class="form-group col-md-3">
+            <label for="inputState"></label>
+            <select  name="title" id="inputState" class="form-control">
+              <option selected value="wantFind">想找什麼呢?</option>
+              <option value="guide">找導遊</option>
+              <option value="trip">找行程</option>
+            </select>
+          </div>
+          <!-- ## Q1.尋找類型 State -->
+
+          <!-- Q2.尋找區域 Area -->
+          <div class="form-group col-md-3">
+            <label for="inputArea"></label>
+            <select name="area" id="inputArea" class="form-control">
+              <option selected value="where">想去的地方?</option>
+              <option value="北部">北部</option>
+              <option value="中部">中部</option>
+              <option value="南部">南部</option>
+              <option value="東部">花東</option>
+              <option value="外離島">外離島</option>
+            </select>
+          </div>
+          <!-- ## Q2.尋找區域 Area -->
+
+          <!-- Q3.搜尋關鍵字 -->
+          <div class="form-group col-md-4 mb-3">
+            <label for="inputKeyword"></label>
+            <input type="text" class="form-control" id="inputKeyword" placeholder="請輸入關鍵字">
+          </div>
+          <!-- ## Q3.搜尋關鍵字 -->
+
+          <!-- button submit -->
+          <div class="form-group col-md-2 mb-3 mt-4">
+            <label for="inputSearch"></label>
+            <button type="submit" class="btn btn-warning" id="inputSearch">
+              搜尋
+              <img src="/images/magnifying-glass.png" alt="">
+            </button>
+          </div>
+          <!-- ## button submit -->
+
+        </div>
+
+      </form>
+      <!-- ## form 表單 -->
+
+    </div>
+    <!-- ## div - container -->
+
+    <!-- 黃色豎線 - 跳轉到近期新增的活動 -->
+    <div class="line"></div>
+
+  </div>
+  <!-- ## green background -->
+  <!-- ## search 搜尋區  -->
+
+
+  <!-- 近期新增的活動 -->
+  <div class="bgGray" id="a1">
+    <!-- div - container -->
+    <div class="container">
+
+      <!-- 圖示 三角形 -->
+      <div class="titleTriangle"></div>
+
+      <!-- 新增活動 -->
+      <!-- 大標 -->
+      <div class="px-4">
+        <h4 class="addActive">
+          近期新增的活動 &nbsp;&nbsp; ——
+        </h4>
+
+        <!-- 新增 - 行程標題 -->
+        <h5 class="addtrip mt-5 mb-4">
+          觀光行程 :
+        </h5>
+        <!-- 新增 - 行程 card -->
+        <div class="row row-cols-sm-1 row-cols-lg-3 row-cols-md-2" id="effects">
+          <!-- card_1 -->
+          <div class="col-lg-3 col-md-6 mb-3">
+            <!-- New -->
+            <div class="New">
+              <img class="img-fluid" src="/images/new.png" alt="">
+            </div>
+            <a href="">
+              <div class="card text-dark">
+                <img src="/images/unnamed.jpg" class="addTripImg" alt="...">
+                <div class="card-body">
+                  <h5 class="tripHeadLine card-title"> — 澎湖花火節 — </h5>
+                  <p class="card-text">地點 : 外離島</p>
+                  <p class="card-text">類型 : 節慶活動</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">新增日期 : 2020/07/31</small>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- ## card_1 -->
+
+          <!-- card_2 -->
+          <div class="col-lg-6 col-md-6 mb-3">
+            <!-- New -->
+            <div class="New">
+              <img class="img-fluid" src="/images/new1.png" alt="">
+            </div>
+            <a href="">
+              <div class="card text-dark">
+                <img src="/images/Peng-hu.jpg" class="addTripImg" alt="...">
+                <div class="card-body">
+                  <h5 class="tripHeadLine card-title"> — 綠島兩天一夜 | 浮潛、朝日溫泉、生態導覽 — </h5>
+                  <p class="card-text">地點 : 外離島</p>
+                  <p class="card-text">類型 : 生態</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">新增日期 : 2020/07/31</small>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- ## card_2 -->
+
+          <!-- card_3 -->
+          <div class="col-lg-3 col-md-6 mb-3">
+            <!-- New -->
+            <div class="New">
+              <img class="img-fluid" src="/images/new.png" alt="">
+            </div>
+            <a href="">
+              <div class="card text-dark">
+                <img src="/images/老梅綠石槽景觀.jpg" class="addTripImg" alt="...">
+                <div class="card-body">
+                  <h5 class="tripHeadLine card-title"> — 北海岸老梅石槽 — </h5>
+                  <p class="card-text">地點 : 北部 新北</p>
+                  <p class="card-text">類型 : 風景</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">新增日期 : 2020/07/31</small>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- ## card_3 -->
+        </div>
+        <!-- ## 新增 - 行程 card -->
+
+        <!-- three button -->
+        <div class="threeBtn">
+          <button class="btnGro selected"></button>
+          <button class="btnGro"></button>
+          <button class="btnGro"></button>
+        </div>
+        <!-- ## three button -->
+
+        <!-- 新增 - 導遊標題 -->
+        <h5 class="addtrip mb-4">
+          導遊 :
+        </h5>
+        <!-- 圖片輪播 - carousel -->
+        <div id="carouselExample" class="carousel slide pt-2" data-ride="carousel" data-interval="false">
+          <!-- 新增 - 導遊 card -->
+          <div class="carousel-inner w-100 mx-auto row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 pt-2" role="listbox" id="effects">
+            <!-- card_1 -->
+            <div class="carousel-item col-lg-3 col-md-4 col-sm-6 mb-4 active">
+              <!-- ---------------------------- -->
+              <div class="panel panel-default">
+                <div class="panel-thumbnail">
+              <!-- New -->
+              <div class="New">
+                <img class="img-fluid" src="/images/new.png" alt="">
+              </div>
+              <a href="" title="image 1" class="thumb">
+                <div class="card text-dark">
+                  <img src="/images/add_guide1.jpg" class="addGuideImg" alt="..." >
+                  <div class="card-body">
+                    <h5 class="tripHeadLine card-title">張曉明</h5>
+                    <p class="card-text">地區: 中部</p>
+                    <p class="card-text">專長類別: 古蹟</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">新增日期 : 2020/07/31</small>
+                  </div>
+                </div>
+              </a>
+
+             </div>
+             </div>
+             <!-- ---------------------------- -->
+            </div>
+            <!-- ## card_1 -->
+
+            <!-- card_2 -->
+            <div class="carousel-item col-lg-3 col-md-4 col-sm-6 mb-4">
+              <!-- ---------- -->
+              <div class="panel panel-default">
+                <div class="panel-thumbnail">
+              <!-- New -->
+              <div class="New">
+                <img class="img-fluid" src="/images/new1.png" alt="">
+              </div>
+              <a href="" title="image 3" class="thumb">
+                <div class="card text-dark">
+                  <img src="/images/add_guide2.jpg" class="addGuideImg" alt="...">
+                  <div class="card-body">
+                    <h5 class="tripHeadLine card-title">艾茂紋</h5>
+                    <p class="card-text">地區: 中部</p>
+                    <p class="card-text">專長類別: 風景</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">新增日期 : 2020/07/31</small>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+            </div>
+              <!-- ---------- -->
+            </div>
+            <!-- ## card_2 -->
+
+            <!-- card_3 -->
+            <div class="carousel-item col-lg-3 col-md-4 col-sm-6 mb-4">
+              <!-- New -->
+              <div class="New">
+                <img class="img-fluid" src="/images/new.png" alt="">
+              </div>
+              <a href="" title="image 4" class="thumb">
+                <div class="card text-dark">
+                  <img src="/images/add_guide3.jpg" class="addGuideImg" alt="...">
+                  <div class="card-body">
+                    <h5 class="tripHeadLine card-title">王昱宣</h5>
+                    <p class="card-text">地區: 南部</p>
+                    <p class="card-text">專長類別: 藝術</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">新增日期 : 2020/07/31</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- ## card_3 -->
+
+            <!-- card_4 -->
+            <div class="carousel-item col-lg-3 col-md-4 col-sm-6 mb-4">
+              <!-- New -->
+              <div class="New">
+                <img class="img-fluid" src="/images/new1.png" alt="">
+              </div>
+              <a href="" title="image 5" class="thumb">
+                <div class="card text-dark">
+                  <img src="/images/add_guide4.jpg" class="addGuideImg" alt="...">
+                  <div class="card-body">
+                    <h5 class="tripHeadLine card-title">宋佩樺</h5>
+                    <p class="card-text">地區: 花東</p>
+                    <p class="card-text">專長類別: 人文</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">新增日期 : 2020/07/31</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- ## card_4 -->
+
+            <!-- card_5 -->
+            <div class="carousel-item col-lg-3 col-md-4 col-sm-6 mb-4">
+              <!-- New -->
+              <div class="New">
+                <img class="img-fluid" src="/images/new.png" alt="">
+              </div>
+              <a href="" title="image 6" class="thumb">
+                <div class="card text-dark">
+                  <img src="/images/add_guide5.jpg" class="addGuideImg" alt="...">
+                  <div class="card-body">
+                    <h5 class="tripHeadLine card-title">王昱宣</h5>
+                    <p class="card-text">地區: 南部</p>
+                    <p class="card-text">專長類別: 藝術</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">新增日期 : 2020/07/31</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- ## card_5 -->
+
+            <!-- card_6 -->
+            <div class="carousel-item col-lg-3 col-md-4 col-sm-6 mb-4">
+              <!-- New -->
+              <div class="New">
+                <img class="img-fluid" src="/images/new1.png" alt="">
+              </div>
+              <a href="" title="image 7" class="thumb">
+                <div class="card text-dark">
+                  <img src="/images/add_guide6.jpg" class="addGuideImg" alt="...">
+                  <div class="card-body">
+                    <h5 class="tripHeadLine card-title">宋佩樺</h5>
+                    <p class="card-text">地區: 花東</p>
+                    <p class="card-text">專長類別: 人文</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">新增日期 : 2020/07/31</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- ## card_6 -->
+
+            <!-- card_7 -->
+            <div class="carousel-item col-lg-3 col-md-4 col-sm-6 mb-4">
+              <!-- New -->
+              <div class="New">
+                <img class="img-fluid" src="/images/new.png" alt="">
+              </div>
+              <a href="" title="image 8" class="thumb">
+                <div class="card text-dark">
+                  <img src="/images/add_guide7.jpg" class="addGuideImg" alt="...">
+                  <div class="card-body">
+                    <h5 class="tripHeadLine card-title">王昱宣</h5>
+                    <p class="card-text">地區: 南部</p>
+                    <p class="card-text">專長類別: 藝術</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">新增日期 : 2020/07/31</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- ## card_7 -->
+
+            <!-- card_8 -->
+            <div class="carousel-item col-lg-3 col-md-4 col-sm-6 mb-4">
+              <!-- New -->
+              <div class="New">
+                <img class="img-fluid" src="/images/new1.png" alt="">
+              </div>
+              <a href="" title="image 2" class="thumb">
+                <div class="card text-dark panel panel-default">
+                  <img src="/images/add_guide8.jpg" class="addGuideImg" alt="...">
+                  <div class="card-body">
+                    <h5 class="tripHeadLine card-title">宋佩樺</h5>
+                    <p class="card-text">地區: 花東</p>
+                    <p class="card-text">專長類別: 人文</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">新增日期 : 2020/07/31</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- ## card_8 -->
+          </div>
+          <!-- ## 新增 - 導遊 card -->
+
+          <!-- <div class="arrowBtn" style="position: relative;"> -->
+          <!-- left arrow --> 
+          <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <button class="preArrow btn" role="button">
+            <img src="/images/pre.png" alt="" class="">
+          </button>
+            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          </a>
+          <!-- right arrow -->
+          <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <button class="nextArrow btn" role="button">
+            <img src="/images/next.png" alt="" class="">
+            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+          </button>
+          </a>
+        <!-- </div> -->
+
+        </div>
+        <!-- ## 圖片輪播 - carousel -->
+
+        <!-- three button -->
+        <!-- <div class="threeBtn">
+          <button class="btnGro selected"></button>
+          <button class="btnGro"></button>
+          <button class="btnGro"></button>
+        </div> -->
+        <!-- ## three button -->
+
+      </div>
+      <!-- ## 大標 -->
+      <!-- ## 新增活動 -->
+
+    </div>
+    <!-- ## div - container-->
+
+  </div>
+  <!-- ## 近期新增的活動 -->
+
+
+  <!-- 熱門導遊 -->
+  <div class="container">
+
+    <!-- 圖示 三角形 -->
+    <div class="titleTriangle"></div>
+
+    <!-- 大標 -->
+    <div class="px-4">
+      <!-- 外框 whiteLine -->
+      <div class="whiteLine">
+
+        <h4 class="addActive pt-3">
+          熱門導遊 &nbsp;&nbsp; ——
+        </h4>
+
+        <!-- 熱門導遊 - image -->
+        <div class="row row-cols-lg-3 row-cols-md-1 mt-4" id="effect">
+          <!-- guide img_1 -->
+          <div class="col-lg-4 yesguide">
+            <a href="">
+              <div class="bgImgYellow shadow-lg">
+                <img src="/images/popular_guide1.jpg" class="guideImg rounded" alt="...">
+                <!-- card -->
+                <div class="yeGuideCard card border-warning mb-3">
+                  <div class="card-header text-center">
+                    <h5 class="popularGuide card-title">
+                      倪政宏 - 1
+                    </h5>
+
+                    <!-- <p style="float: left; margin-bottom: -5px;color: #F64000; font-size: 14px;font-weight: 500;">
+                            <img src="image/heart (2).png" alt=""> 
+                           11850&nbsp;Likes
+                          </p> -->
+                  </div>
+                  <div class="card-body">
+                    <p class="guideArea_A card-text text-dark">
+                      地區: 中部
+                    </p>
+                    <p class="guideArea_B card-text text-dark">
+                      專長類別: 風景
+                    </p>
+                    <p class="guideLike">
+                      <img src="/images/heart.png" alt="">
+                      11850&nbsp;Likes
+                    </p>
+                  </div>
+                </div>
+                <!-- ## card -->
+              </div>
+            </a>
+          </div>
+          <!-- ## guide img_1 -->
+
+          <!-- guide img_2 -->
+          <div class="col-lg-4 yesguide">
+            <a href="">
+              <div class="bgImgYellow_2 shadow-lg">
+                <!-- card -->
+                <div class="yeGuideCard card border-warning">
+                  <div class="card-header text-center">
+                    <h5 class="popularGuide card-title">
+                      楊漢潔 - 2
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    <p class="guideArea_A card-text text-dark">
+                      地區: 南部
+                    </p>
+                    <p class="guideArea_B card-text text-dark">
+                      專長類別: 藝術
+                    </p>
+                    <p class="guideLike">
+                      <img src="/images/heart.png" alt="">
+                      9860&nbsp;Likes
+                    </p>
+                  </div>
+                </div>
+                <!-- ## card -->
+                <img src="/images/popular_guide2.jpg" class="guideImg rounded" alt="...">
+              </div>
+            </a>
+          </div>
+          <!-- ## guide img_2 -->
+
+          <!-- guide img_3 -->
+          <div class="col-lg-4 yesguide">
+            <a href="">
+              <div class="bgImgYellow shadow-lg">
+                <img src="/images/popular_guide3.jpg" class="guideImg rounded" alt="...">
+                <!-- card -->
+                <div class="yeGuideCard card border-warning mb-3">
+                  <div class="card-header text-center">
+                    <h5 class="popularGuide card-title">
+                      陳柏白 - 3
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    <p class="guideArea_A card-text text-dark">
+                      地區: 花東
+                    </p>
+                    <p class="guideArea_B card-text text-dark">
+                      專長類別: 人文
+                    </p>
+                    <p class="guideLike">
+                      <img src="/images/heart.png" alt="">
+                      9529&nbsp;Likes
+                    </p>
+                  </div>
+                </div>
+                <!-- ## card -->
+              </div>
+            </a>
+          </div>
+          <!-- ## guide img_3 -->
+        </div>
+        <!-- ## 熱門導遊 - image -->
+
+        <!-- button arrow -->
+        <div class="arrowBtn" style="position: relative;">
+          <button class="preArrow btn mt-5" role="button">
+            <img src="/images/pre.png" alt="" class="">
+          </button>
+          <button class="nextArrow btn mt-5" role="button">
+            <img src="/images/next.png" alt="" class="">
+          </button>
+        </div>
+        <!-- ## button arrow -->
+
+      </div>
+      <!-- ## 外框 whiteLine -->
+    </div>
+    <!-- ## 大標 -->
+
+  </div>
+  <!-- ## 熱門導遊 -->
+
+
+  <!-- bg - white 過場 -->
+  <div class="bgWhite">
+    <div class=" container">
+      <div class="row row-cols-1 row-cols-md-2">
+        <div class="titleContent col-md-6">
+          <!-- header title -->
+          <!-- left -->
+          <p class="h1 bgWhiteText">
+            為什麼選擇問導遊?
+            <br>
+            因為我們有愛
+            <br>
+          </p>
+          <span class="smallText">
+            —— when do you trip?
+          </span>
+        </div>
+        <!-- right -->
+        <div class="col-md-6">
+          <img src="/images/guide_g(1).png" alt="" class="bgWhiteImg mt-2">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ## bg - white 過場 -->
+
+
+  <!-- 行程分類 -->
+  <div class="container">
+
+    <!-- 圖示 三角形 -->
+    <div class="titleTriangle"></div>
+
+    <!-- 大標 -->
+    <div class="px-4">
+      <h4 class="journey">
+        行程分類 &nbsp;&nbsp; ——
+      </h4>
+
+      <!-- 圖片輪播區 -->
+      <div id="loopBtn">
+        <!-- 左右各兩邊的span -->
+        <div class="myBtn">
+          <span class="left" id="leftBtn"></span>
+          <span class="right" id="rightBtn"></span>
+        </div>
+        <!-- ## 左右各兩邊的span -->
+
+        <!-- image -->
+        <ul class="imgUl">
+          <!-- 第一張 -->
+          <li class="no0">
+            <a href="">
+              <img class="journeyImg img-fluid" src="/images/journeyImg-food.jpg" alt="">
+              <h4 class="journeyText text-center">
+                美食饗宴
+              </h4>
+            </a>
+          </li>
+          <!-- 第二張 -->
+          <li class="no1">
+            <a href="">
+              <img class="journeyImg img-fluid" src="/images/journeyImg-culture.jpg" alt="">
+              <h4 class="journeyText text-center">
+                在地文化
+              </h4>
+            </a>
+          </li>
+          <!-- 第三張 -->
+          <li class="no2">
+            <a href="">
+              <img class="journeyImg img-fluid" src="/images/journeyImg-forest.jpg" alt="">
+              <h4 class="journeyText text-center">
+                探索森林
+              </h4>
+            </a>
+          </li>
+          <!-- 第四張 -->
+          <li class="no3">
+            <a href="">
+              <img class="journeyImg img-fluid" src="/images/journeyImg-ocean.jpg" alt="">
+              <h4 class="journeyText text-center">
+                海洋之美
+              </h4>
+            </a>
+          </li>
+          <!-- 第五張 -->
+          <li class="no4">
+            <a href="">
+              <img class="journeyImg img-fluid" src="/images/journeyImg-history.jpg" alt="">
+              <h4 class="journeyText text-center">
+                古蹟巡禮
+              </h4>
+            </a>
+          </li>
+        </ul>
+        <!-- ## image -->
+
+        <!-- button -->
+        <div class="tipDot" id="tipDot">
+          <ul>
+            <li></li>
+            <li></li>
+            <li class="cur"></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <!-- ## button -->
+
+      </div>
+      <!-- ## 圖片輪播區 -->
+
+    </div>
+    <!-- ## 大標 -->
+  </div>
+  <!-- ## 行程分類 -->
+
+
+  <!-- 尋找適合的導遊 -->
+  <div class="bgSuitGray_2" id="bgFitGuide">
+    <div class="bgFitGuideImg">
+      <img src="/images/banner-image_07-2.png" alt="" style="overflow: hidden; width: 380px; ">
+    </div>
+    <!-- div - container -->
+    <div class="container">
+
+      <!-- 圖示 三角形 -->
+      <div class="titleTriangle"></div>
+      <!-- 大標 -->
+      <div class="px-4">
+        <h4 class="addActive">
+          尋找適合的導遊 &nbsp;&nbsp; ——
+        </h4>
+        <!-- clearfix ==> base.css 與 Bootstrap -->
+        <div class="bgCircleArea clearfix mt-4 mb-4">
+          <ul>
+            <!-- fl ==> float:left common.css -->
+            <li class="fl">
+              <button class="areaConnect selected">
+                北部
+              </button>
+            </li>
+            <li class="fl"> &nbsp;&nbsp; / &nbsp;&nbsp;</li>
+            <li class="fl">
+              <button class="areaConnect">
+                中部
+              </button>
+            </li>
+            <li class="fl"> &nbsp;&nbsp; / &nbsp;&nbsp;</li>
+            <li class="fl">
+              <button class="areaConnect">
+                南部
+              </button>
+            </li>
+            <li class="fl"> &nbsp;&nbsp; / &nbsp;&nbsp;</li>
+            <li class="fl">
+              <button class="areaConnect">
+                花東
+              </button>
+            </li>
+            <li class="fl"> &nbsp;&nbsp; / &nbsp;&nbsp;</li>
+            <li class="fl">
+              <button class="areaConnect">
+                外離島
+              </button>
+            </li>
+          </ul>
+        </div>
+
+
+        <!--  導遊 card -->
+        <div class="content row row-cols-1 row-cols-md-4 row-cols-sm-2">
+
+          <!-- left -->
+          <!-- 北部 card_1 -->
+          <div class="col-md-3 mb-4" id="suitGuideHov">
+            <a href="">
+              <div class="suitGuide card">
+                <h4 class="areaGuide card-title text-light text-center">
+                  北部 /
+                </h4>
+              </div>
+            </a>
+          </div>
+          <!-- ## 北部 card_1 -->
+          <!-- </div> -->
+
+          <!-- card_1 -->
+          <div class="col-md-3 mb-4" id="suitGuideHov_1">
+            <a href="">
+              <div class="card text-dark">
+                <img src="/images/north_guide.jpg" class="suitGuideImg" alt="...">
+                <div class="card-body">
+                  <h5 class="tripHeadLine card-title">Yuri</h5>
+                  <p class="card-text">專長類別: 人文、藝術</p>
+                </div>
+                <div class="card-footer">
+                  <p class="guideTroduce text-muted">大家好！ 歡迎來找我玩， 帶領你走遍台灣各個角落、吃遍每個城市的美食！</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- ## card_1 -->
+
+          <!-- card_2 -->
+          <div class="col-md-3 mb-4" id="suitGuideHov_1">
+            <a href="">
+              <div class="card text-dark">
+                <img src="/images/north_guide3.jpg" class="suitGuideImg" alt="...">
+                <div class="card-body">
+                  <h5 class="tripHeadLine card-title">小凱</h5>
+                  <p class="card-text">專長類別: 風景</p>
+                </div>
+                <div class="card-footer">
+                  <p class="guideTroduce text-muted">歡迎來到台灣!想要了解各地的民俗風情找我就對了。</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- ## card_2 -->
+
+          <!-- card_3 -->
+          <div class="col-md-3 mb-4" id="suitGuideHov_1">
+            <a href="">
+              <div class="card text-dark">
+                <img src="/images/South_guide.jpg" class="suitGuideImg" alt="...">
+                <div class="card-body">
+                  <h5 class="tripHeadLine card-title">艾倫 (郭成偉)</h5>
+                  <p class="card-text">專長類別: 人文、古蹟</p>
+                </div>
+                <div class="card-footer">
+                  <p class="guideTroduce text-muted">我熱愛旅遊，喜歡解說，興趣是生態、歷史、地理與閩南客家建築。 我還喜歡登山與旅行，來找我的旅客我都把他們當成朋友~~
+                    喜歡認識更多的朋友！ 用心介紹旅遊過程是我的樂趣！我是愛說故事的人！來找我吧！</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- ## card_3 -->
+
+        </div>
+        <!-- ## 導遊 card -->
+
+        <!-- button arrow -->
+        <div class="arrowBtn pb-5 pt-4" id="selGuideBtn">
+          <button class="preArrow btn mt-1" role="button">
+            <img src="/images/pre.png" alt="" class="">
+          </button>
+          <button class="nextArrow btn mt-1" role="button">
+            <img src="/images/next.png" alt="" class="">
+          </button>
+        </div>
+        <!-- ## button arrow -->
+
+      </div>
+      <!-- ## 大標 -->
+
+    </div>
+    <!-- ## container -->
+
+  </div>
+  <!-- ## 尋找適合的導遊 -->
+
+
+  <!-- contact -->
+  <!-- div - container -->
+  <div class="titleContent container">
+
+    <!-- 大標 -->
+    <div class="row row-cols-1 row-cols-md-2 px-4">
+      <div class="col-md-6">
+        <h4 class="addActive">
+          聯絡我們 &nbsp;&nbsp; ——
+        </h4>
+        <p class="mt-3 mb-5">若您有任何建議或疑問，歡迎來信與我們聯絡，或致電客服專線：0800-000-666，我們將用心聆聽，並以最快的速度回應給您，謝謝~
+        </p>
+        <!-- Form -->
+        <form method="POST" action="send">
+          <div class="">
+            <label for="InputName">你的大名 :</label>
+            <input type="text" class="form-control"name="name" id="InputName" placeholder="">
+          </div>
+          <div class="">
+            <label for="InputTel">聯絡電話 :</label>
+            <input type="tel" class="form-control" id="InputTel"name="phone" placeholder="">
+          </div>
+          <div class="">
+            <label for="InputEmail">聯絡信箱 :</label>
+            <input type="email" class="form-control" name="email" id="InputEmail" placeholder="">
+          </div>
+          <div class="">
+            <label for="Textarea">訊息內容 :</label>
+            <textarea class="form-control" id="Textarea" rows="4"name="message" placeholder="請說明你的問題..."></textarea>
+          </div>
+         
+            <button class="btn btn-primary" type="submit">送出</button>
+          
+        </form>
+        <!-- ## Form -->
+      </div>
+      <!-- map -->
+      <div class="col-md-6 mt-5">
+        <div class="map_bg rounded ">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.604432042262!2d120.64881961412208!3d24.150526184393602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d9650422ae1%3A0x334dfd5796c49ff6!2z6LOH562W5pyDLeaVuOS9jeaVmeiCsueglOeptuaJgC3kuK3ljYDoqJPnt7TkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1595998978164!5m2!1szh-TW!2stw"
+            frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0">
+          </iframe>
+        </div>
+      </div>
+      <!-- ## map -->
+
+
+
+    </div>
+    <!-- ## 大標 -->
+
+  </div>
+  <!-- ## container -->
+
+  <!-- ## contact -->
+
+  <!-- footer start -->
+  <div class="footer">
+    <div class="links">
+      <dl>
+        <dt>認識問導遊</dt>
+        <dd><a href="#">關於我們</a></dd>
+        <dd><a href="#">管理團隊</a></dd>
+        <dd><a href="#">人才招募</a></dd>
+        <dd><a href="#">客戶服務</a></dd>
+        <dd><a href="#">幫助</a></dd>
+      </dl>
+      <dl>
+        <dt>給旅人</dt>
+        <dd><a href="#">三大保證</a></dd>
+        <dd><a href="#">官方部落格</a></dd>
+        <dd><a href="#">會員好禮</a></dd>
+      </dl>
+      <dl>
+        <dt>合作夥伴</dt>
+        <dd><a href="#">合作夥伴</a></dd>
+        <dd><a href="#">成為導遊</a></dd>
+        <dd><a href="#">同業合作</a></dd>
+        <dd><a href="#">聯盟行銷</a></dd>
+        <dd><a href="#">旅遊客製規劃</a></dd>
+      </dl>
+    </div>
+  </div>
+  <!-- footer end -->
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員登入</title>
+    <!-- 引入css初始化 -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <!-- 引入register css樣式 -->
+    <link rel="stylesheet" href="/stylesheets/register.css">
+
+</head>
+
+<body>
+
+    <div class="container my-3" style="height: 10vh;">
+        <div class="row row-cols-2">
+            
+            <!-- 左半邊 green 圖片 -->
+            <div class="w col-6" id="w_green">
+                <img src="/images/team2.png" class="img_green" alt="">
+            </div> 
+            
+            <!-- 右半邊表單 - 登入 -->
+            <div class="w col-6" style="width: 50%;">
+                <!-- logo -->
+                <div class="header">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="/images/logo-w-after(small).png" alt="" title="回首頁">
+                        </a>
+                    </div>
+                </div>
+                <!-- form 表單 -->
+                <div class="registerarea">
+                    <h3>會員登入
+                        <em>還沒有帳號？去
+                            <a href="/users/register">
+                                註冊
+                            </a>
+                        </em>
+                    </h3>
+                    <div class="reg_form">
+                        <form id="form1" name="form1" method="post" action="">
+                            <ul>
+                                <li>
+                                    <label for="tel">帳號：</label>
+                                    <input type="text" class="inp" onblur="checkID(this)" name="txtUserName" id="txtUserName" value="0912345678">
+                                        <span id="txtUserNam" class="error">
+                                            <i class="error_icon"></i>
+                                        </span>
+                                </li>
+                                <li>
+                                    <label for="">密碼：</label>
+                                    <input name="txtPassword" class="inp" type="password" id="txtPassword" value="abc1">
+                                        <span id="txtPasswor" class="success">
+                                            <i class="success_icon"></i>
+                                        
+                                        </span>
+                                </li>
+                                <li>
+                                    <input type="submit" name="btnOK" id="btnOK" value="登入" class="over">
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+        <!-- <div class="footer">
+            <p class="links"> 關於我們 ｜ 聯繫我們 ｜ 聯繫客服 ｜ 商家入駐 ｜ 成為導遊 ｜ 聯盟行銷 ｜ 友情鏈接 ｜ 同業合作 ｜ 旅遊客製規劃 ｜ 品牌公益 ｜ English Site
+            </p>
+        </div> -->
+            </div>
+
+        </div>
+    </div>
+
+<script>
+        document.getElementById("txtUserNam").onclick=()=>{
+            document.getElementById("txtUserName").value="0912369874"
+        }
+        document.getElementById("txtPasswor").onclick=()=>{
+            document.getElementById("txtPassword").value="0912369874"
+        }
+        function checkID(formElement) {
+            re = /^09\d{8}$/;
+            if (!re.test(formElement.value))
+                alert("手機格式不對");
+        }
+</script>
+
+</body>
+
+</html>

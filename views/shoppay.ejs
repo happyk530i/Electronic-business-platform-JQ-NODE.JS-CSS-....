@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問導遊 - 尋找私人導遊的專屬平台</title>
+
+    <!-- FAVIOCN -->
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+
+    <!-- 引用css、Bootstrap、 jQuery 與 popper -->
+    <link rel="stylesheet" href="/stylesheets/common.css" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/trip.css">
+    <link rel="stylesheet" href="/owl/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/owl/assets/owl.theme.default.min.css">
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/owl/owl.carousel.min.js"></script>
+    <script src="/javascripts/popper.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/yo_shoppay.js"></script>
+    <link rel="stylesheet" href="/stylesheets/yo_shoppay.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <%- include mod_header -%>
+
+    <!-- ## navbar 導覽列 -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <input id="checkUser" type="hidden" value="<%=userId%>">
+    <!-- 結帳流程 -->
+
+    <div style="width:80vw; margin: auto;">
+        <div>
+            <ol id="" class="breadcrumb">
+                <li class="active" style="color: blue;font-size: 1.2em">
+                    <img src="/images/icon/PNG/16px/059-cart.png" alt=""> <b>購物車</b>
+                </li>
+                <li>
+                    <img src="/images/icon/PNG/16px/007-pencil2.png" alt=""> 填寫資料與付款
+                </li>
+
+                <li>
+                    <img src="/images/icon/PNG/16px/273-checkmark.png" alt=""> 訂購完成
+                </li>
+            </ol>
+        </div>
+        <div class="cartPayHead">
+            <div>
+                <p>購買資料</p>
+            </div>
+            <div>
+                <p>確認行程</p>
+            </div>
+            <div>
+                <p>付款方式</p>
+            </div>
+
+        </div>
+        <!-- 結帳頁_確認內容 -->
+        <div class="cartPayBody">
+            <div style="height: 300px;overflow-y: scroll; position: relative;">
+                <table class="shopList">
+                    <tr style="position:absolute fixed;background-color: gray;">
+                        <td>&emsp;</td>
+                        <td>行程</td>
+                        <td>時間</td>
+                        <td>人數</td>
+                        <td>價錢</td>
+                        <td>語言</td>
+                        <td style="width: 300px;">特殊要求</td>
+                    </tr>
+
+                </table>
+            </div>
+            <h2 id="totalList"></h2>
+            <ul id="total"></ul>
+            <div>
+                <div class="offset-4 col-4">
+                    <button id="btn1" class="btn btn-primary"> 下一步</button>
+                </div>
+            </div>
+
+
+        </div>
+        <br>
+        <!-- 結帳頁_基本資料 -->
+        <div id="p1" class="w">
+            <ol id="" class="breadcrumb">
+                <li class="active">
+                    <img src="/images/icon/PNG/16px/059-cart.png" alt=""> 購物車
+                </li>
+                <li style="color: blue;font-size: 1.2em">
+                    <img src="/images/icon/PNG/16px/007-pencil2.png" alt=""> <b>填寫資料與付款</b>
+                </li>
+
+                <li>
+                    <img src="/images/icon/PNG/16px/273-checkmark.png" alt=""> 訂購完成
+                </li>
+            </ol>
+        </div>
+        <div class="w">
+            <div class="cartPayHead">
+                <div>
+                    <p>購買資料</p>
+                </div>
+                <div>
+                    <p>確認行程</p>
+                </div>
+                <div>
+                    <p>付款方式</p>
+                </div>
+
+            </div>
+            <div class="cartPayBody">
+                <div class="form-group row pt">
+                    <div class="col-1"></div>
+                    <label for="" class="col-2   col-form-label">姓名</label>
+                    <div class="col-4">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-address-book"></i>
+                                </div>
+                            </div>
+
+                            <input id="memberName" name="memberName" type="text" class="form-control"
+                                value="<%=payData[0].memberName%>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mt">
+                    <div class="col-1"></div>
+                    <label class="col-2 col-form-label" for="text">電話</label>
+                    <div class="col-4">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-volume-control-phone"></i>
+                                </div>
+                            </div>
+                            <input id="memberTel" name="memberTel" type="tel"" class=" form-control" required="required"
+                                value="<%=payData[0].memberTel%>">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mt">
+                    <div class="col-1"></div>
+                    <label for="text1" class="col-2 col-form-label">生日</label>
+                    <div class="col-4">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-telegram"></i>
+                                </div>
+                            </div>
+                            <input id="memberBir" name="memberBir" type="date" class="form-control" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mt">
+                    <div class="col-1"></div>
+                    <label for="text2" class="col-2 col-form-label">信箱</label>
+                    <div class="col-4">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                            <input id="memberEmail" name="memberEmail" type="email" class="form-control"
+                                value="<%=payData[0].memberEmail%>">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <!-- <div class="col-5"></div> -->
+                    <div class="offset-4 col-4">
+                        <button id="btn2" class="btn btn-primary">下一步</>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <div id="p3" class="w">
+                <ol class="breadcrumb">
+                    <li class="active">
+                        <img src="/images/icon/PNG/16px/059-cart.png" alt=""> 購物車
+                    </li>
+                    <li>
+                        <img src="/images/icon/PNG/16px/007-pencil2.png" alt=""> 填寫資料與付款
+                    </li>
+
+                    <li style="color: blue;font-size: 1.2em;">
+                        <img src="/images/icon/PNG/16px/273-checkmark.png" alt=""> <b>訂購完成</b>
+                    </li>
+                </ol>
+            </div>
+            <div class="cartPayHead">
+                <div>
+                    <p>購買資料</p>
+                </div>
+                <div>
+                    <p>確認行程</p>
+                </div>
+                <div>
+                    <p>付款方式</p>
+                </div>
+
+            </div>
+            <!-- 結帳頁_付款方式-->
+            <div class="cartPayBody">
+                <input type="hidden" id="memberId" value="<%=userId%>">
+                <div class="form-group row  formItem2">
+                    <label class="col-2 col-form-label">付費方式</label>
+                    <div class="col-4">
+                        <div class="custom-controls-stacked">
+                            <div class="custom-control custom-radio">
+                                <input name="memberPay" id="radio_0" type="radio" required="required"
+                                    class="custom-control-input" value="LinePay">
+                                <label for="radio_0" class="custom-control-label">LinePay</label>
+                                <img class="img-fluid" src="/images/other/LINE_Pay.png" alt="">
+                            </div>
+                        </div>
+                        <div class="custom-controls-stacked">
+                            <div class="custom-control custom-radio">
+                                <input name="memberPay" id="radio_1" type="radio" required="required"
+                                    class="custom-control-input" value="ApplePay">
+                                <label for="radio_1" class="custom-control-label">ApplePay</label>
+                                <img class="img-fluid" src="/images/other/apple_pay.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="custom-controls-stacked">
+                            <div class="custom-control custom-radio">
+                                <input name="memberPay" id="radio_2" type="radio" required="required"
+                                    class="custom-control-input" value="CreditCard">
+                                <label for="radio_2" class="custom-control-label">信用卡</label>
+                                <img class="img-fluid" src="/images/other/信用卡.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="offset-4 col-4">
+                        <button name="submit" type="reset" class="btn btn-danger">上一步</button>
+                        <button id="summit" class="btn btn-primary">確定結帳</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- 輪播商品_開始 -->
+
+    <div class="container">
+        <h3>最多人瀏覽</h3>
+    </div>
+    <div class="owl-carousel owl-theme container">
+        <div class="item">
+            <h5>溪頭走走</h5>
+            <div>
+                <img class="img-fluid" src="/images/trip/trip2_1.jpg" alt="">
+            </div>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>可以使用三倍券</span></p>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>★★★★★</span></p>
+
+            <p><span>TWD</span>&emsp;<span>360</span></p>
+        </div>
+        <div class="item">
+            <h5>故宮南院走走</h5>
+            <div>
+                <img class="img-fluid" src="/images/trip/trip3_1.jpg" alt="">
+            </div>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>可以使用三倍券</span></p>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>★★★★★</span></p>
+
+            <p><span>TWD</span>&emsp;<span>360</span></p>
+        </div>
+        <div class="item">
+            <h5>南方澳平台</h5>
+            <div>
+                <img class="img-fluid" src="/images/trip/trip4_1.jpg" alt="">
+            </div>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>可以使用三倍券</span></p>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>★★★★★</span></p>
+
+            <p><span>TWD</span>&emsp;<span>360</span></p>
+        </div>
+        <div class="item">
+            <h5>正濱漁港</h5>
+            <div>
+                <img class="img-fluid" src="/images/trip/trip5_1.jpg" alt="">
+            </div>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>可以使用三倍券</span></p>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>★★★★★</span></p>
+
+            <p><span>TWD</span>&emsp;<span>360</span></p>
+        </div>
+        <div class="item">
+            <h5>
+                谷關風景特定區</h5>
+            <div>
+                <img class="img-fluid" src="/images/trip/trip6_1.jpg" alt="">
+            </div>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>可以使用三倍券</span></p>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>★★★★★</span></p>
+
+            <p><span>TWD</span>&emsp;<span>360</span></p>
+        </div>
+        <div class="item">
+            <h5>鳳儀書院</h5>
+            <div>
+                <img class="img-fluid" src="/images/trip/trip7_1.jpg" alt="">
+            </div>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>可以使用三倍券</span></p>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>★★★★★</span></p>
+
+            <p><span>TWD</span>&emsp;<span>360</span></p>
+        </div>
+        <div class="item">
+            <h5>台灣太魯閣</h5>
+            <div>
+                <img class="img-fluid" src="/images/trip/trip8_1.jpg" alt="">
+            </div>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>可以使用三倍券</span></p>
+            <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                <span>★★★★★</span></p>
+
+            <p><span>TWD</span>&emsp;<span>360</span></p>
+        </div>
+
+    </div>
+    </div>
+    <!-- 輪播商品_結束 -->
+    <!-- footer start -->
+    <div class="footer">
+        <div class="links">
+            <dl>
+                <dt>認識問導遊</dt>
+                <dd><a href="#">關於我們</a></dd>
+                <dd><a href="#">管理團隊</a></dd>
+                <dd><a href="#">人才招募</a></dd>
+                <dd><a href="#">客戶服務</a></dd>
+                <dd><a href="#">幫助</a></dd>
+            </dl>
+            <dl>
+                <dt>給旅人</dt>
+                <dd><a href="#">三大保證</a></dd>
+                <dd><a href="#">官方部落格</a></dd>
+                <dd><a href="#">會員好禮</a></dd>
+            </dl>
+            <dl>
+                <dt>合作夥伴</dt>
+                <dd><a href="#">合作夥伴</a></dd>
+                <dd><a href="#">成為導遊</a></dd>
+                <dd><a href="#">同業合作</a></dd>
+                <dd><a href="#">聯盟行銷</a></dd>
+                <dd><a href="#">旅遊客製規劃</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!-- footer end -->
+
+    <script type="text/javascript" src="../../public/links/js/jquery.toast.js"></script>
+    <!-- 輪播圖控制器 -->
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                stagePadding: 50,
+                loop: true,
+                margin: 20,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    500: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

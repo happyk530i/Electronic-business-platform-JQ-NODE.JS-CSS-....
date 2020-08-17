@@ -1,0 +1,60 @@
+/* 清除默認邊距 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* 清除默認li樣式 */
+
+li {
+    list-style: none;
+}
+
+
+/* 清除連結下劃線 */
+
+a {
+    text-decoration: none;
+    position: relative;
+}
+
+
+/*讓button按鈕 變成小手*/
+
+button {
+    cursor: pointer;
+}
+
+
+/* 更改預設css盒子所計算的寬與高 */
+
+div {
+    box-sizing: border-box;
+}
+
+
+/*讓所有斜體不傾斜*/
+
+em,
+i {
+    font-style: normal;
+}
+
+
+/* clearfix清除浮動 */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}

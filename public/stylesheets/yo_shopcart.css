@@ -1,0 +1,172 @@
+
+/* 調整距離 */
+
+.pb {
+  padding-bottom: 10px;
+}
+
+.pt {
+  padding-top: 10px;
+}
+
+.mb {
+  margin-bottom: 10px;
+}
+
+.mt {
+  margin-top: 30px;
+}
+
+/* 訂購流程 */
+
+.w > .breadcrumb > li + li:before {
+  content: ">";
+}
+
+/* 購物車_開始 */
+
+/* checkbox */
+
+.cartCheck {
+  padding-top: 55px;
+ 
+}
+
+[type="checkbox"] {
+  zoom: 2;
+}
+
+/* 購物車_頭部 */
+
+.cartHead {
+  padding: 20px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid white;
+  border-bottom-color: gray;
+  border-radius: 10px 10px 0 0;
+}
+
+/* 購物車內容 */
+
+.cartBody {
+  background-color: white;
+  display: flex;
+  margin-right: 0px;
+  margin-left: 0px;
+  text-align: center;
+  border: 1px solid white;
+  border-bottom-color: gray;
+  
+}
+.cartBody>div{
+  border-bottom: 1px black solid;
+}
+
+/* 購物車內容_照片 */
+
+.cartBodyPhoto {
+  height: 150px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.cartBodyPhoto > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  margin: auto;
+  object-fit: cover;
+
+}
+
+/* 購物車內容_標題 */
+
+.cartBodyTitle {
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* 購物車結帳 */
+
+.cartFooter {
+  height: 80px;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  margin-right: 0px;
+  margin-left: 0px;
+  text-align: center;
+  padding-top: 20px;
+}
+.deleteItem{
+  cursor: pointer;
+}
+
+/* 購物車_結束 */
+
+/* 輪播商品_開始 */
+
+/* 輪播外框 */
+
+.owl-carousel {
+  margin-top: 50px;
+  position: relative;
+}
+.item .img-fluid{
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+
+/* 輪播內容 */
+.item {
+  height: 350px;
+  background-color: white;
+  overflow: hidden;
+  margin-left: 3px;
+  width: 200px;
+  border-radius: 15px;
+  padding: 10px;
+}
+.item:hover{
+  opacity: 0.7;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* 左邊箭頭 */
+.owl-prev {
+  zoom: 3;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  width: 10px;
+  height: 30px;
+  color: red;
+  border: seagreen 3px solid;
+}
+/* 右邊箭頭 */
+.owl-next {
+  zoom: 3;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  width: 10px;
+  height: 30px;
+  border: seagreen 3px solid;   
+}
+button>span{
+    color: blue; 
+}
+
+/* card內小icon */
+.owl-carousel .owl-item span > img {
+  width: 20px;
+}
+
+/* 輪播商品_結束 */
+
+.container-fluid {
+  margin-top: 100px;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊會員</title>
+    <!-- 引入css初始化 -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <!-- 引入register css樣式 -->
+    <link rel="stylesheet" href="/stylesheets/register.css">
+</head>
+
+<body>
+    <div class="container my-3" style="height: 10vh;">
+        <div class="row row-cols-2">
+
+            <!-- 左半邊 yellow 圖片 -->
+            <div class="w col-6" id="w_yellow">
+                <img src="/images/team.png" class="img_yellow" alt="">
+            </div> 
+
+            <!-- 右半邊表單 - 註冊 -->
+            <div class="w col-6"  style="width: 50%;">
+                <!-- logo -->
+                <div class="header_1">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="/images/logo-w-after(small).png" alt="" title="回首頁">
+                        </a>
+                    </div>
+                </div>
+                <!-- form 表單 -->
+                <div class="registerarea_1">
+                    <h3>註冊新會員
+                        <em>我有帳號,去
+                            <a href="/users/login"> 
+                                登入
+                            </a>
+                        </em>
+                    </h3>
+                    <div class="reg_form ml-5">
+                        <form id="form2" name="form1" method="post" action="" action="">
+                            <ul>
+                                <li>
+                                    <label for="">帳號註冊：</label>
+                                    <input type="text" class="inp_1" id="txtDotphone" name="txtDotphone">
+                                    <!-- <span class="success">
+                                        <i class="success_icon"></i>
+                                        密碼一致
+                                    </span> -->
+                                </li>
+                                <li>
+                                    <label for="">密碼註冊：</label>
+                                    <input type="text" class="inp_1" onblur="checkPwd(this)" id="txtPassword" name="txtPassword">
+                                    <!-- <span class="success">
+                                        <i class="success_icon"></i>
+                                        格式正確
+                                    </span> -->
+                                </li>
+                                <li>
+                                    <label for="tel">手機號碼：</label>
+                                    <input type="text" class="inp_1" onblur="checkPhon(this)" name="txtUserName" id="txtUserName">
+                                    <!-- <span class="error">
+                                        <i class="error_icon"></i>
+                                        手機號碼格式不正確,請從新輸入
+                                    </span> -->
+                                </li>
+
+                                <!-- <li>
+                                    <label for="">簡訊驗證碼：</label>
+                                    <input type="text" class="inp">
+                                </li> -->
+
+                                <!-- <li>
+                                    <label for="">登入密碼：</label>
+                                    <input type="text" class="inp">
+                                    <span class="success">
+                                    <i class="success_icon"></i>
+                                    格式正確
+                                </span>
+                                </li> -->
+
+                                <!-- <li class="safe">
+                                    安全程度
+                                    <em class="weak">弱</em>
+                                    <em class="medium">中</em>
+                                    <em class="strong">強</em>
+                                </li> -->
+                                <!-- <li>
+                                    <label for="">確認密碼：</label>
+                                    <input type="text" class="inp">
+                                    <span class="success">
+                                    <i class="success_icon"></i>
+                                    密碼一致
+                                </span>
+                                </li> -->
+                                <!-- <li class="agree">
+                                    <input type="checkbox"> 同意並註冊
+                                    <a href="#">
+                                        <<用戶協議>> </a>
+                                </li> -->
+                                <li>
+                                    <input type="submit" value="註冊" class="over_1">
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+        <!-- <div class="footer">
+            <p class="links"> 關於我們 ｜ 聯繫我們 ｜ 聯繫客服 ｜ 商家入駐 ｜ 成為導遊 ｜ 聯盟行銷 ｜ 友情鏈接 ｜ 同業合作 ｜ 旅遊客製規劃 ｜ 品牌公益 ｜ English Site
+            </p>
+        </div> -->
+            </div>
+
+        </div>
+    </div>
+
+<script>
+        function checkPhon(formElement) {
+            re = /^09\d{8}$/;
+            if (!re.test(formElement.value))
+                alert("手機格式不對");
+        }
+
+        function checkPwd(formElement) {
+            re = /^[A-Za-z0-9]+$/;
+            if (!re.test(formElement.value))
+                alert("預設密碼格式不符");
+        }
+</script>
+
+</body>
+
+</html>

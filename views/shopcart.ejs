@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問導遊 - 尋找私人導遊的專屬平台</title>
+
+    <!-- FAVIOCN -->
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+
+    <!-- 引用css、Bootstrap、 jQuery 與 popper -->
+    <link rel="stylesheet" href="/stylesheets/common.css" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    <link rel="stylesheet" href="/stylesheets/trip.css">
+    <link rel="stylesheet" href="/owl/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/owl/assets/owl.theme.default.min.css">
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/owl/owl.carousel.min.js"></script>
+    <script src="/javascripts/popper.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/yo_shopcart.js"></script>
+    <link rel="stylesheet" href="/stylesheets/yo_shopcart.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <%- include mod_header -%>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- 購物車_開始 -->
+    <!-- 購物車流程 -->
+    <div class="container">
+        <ol id="" class="breadcrumb">
+            <li class="active">
+                <img src="/images/icon/PNG/16px/059-cart.png" alt=""> 購物車
+            </li>
+            <li>
+                <img src="/images/icon/PNG/16px/007-pencil2.png" alt=""> 填寫資料與付款
+            </li>
+            <li>
+                <img src="/images/icon/PNG/16px/273-checkmark.png" alt=""> 訂購完成
+            </li>
+        </ol>
+    </div>
+    <div class="container cartItem ">
+        <!-- 購物車標題 -->
+        <div class="cartHead">
+            <div>
+                <h3>購物車</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-2">商品名稱</div>
+                <div class="col-2" style="text-align: center;">時間</div>
+                <div class="col-2" style="text-align: center;">人數</div>
+                <div class="col-1" style="text-align: center;">價錢</div>
+            </div>
+
+        </div>
+        <!-- 購物車內容 -->
+        <!-- 第一筆選項開始 -->
+        <form method="GET" action="/users/shoppay">
+            <ul id="cartBody" class="cartBody row">
+            </ul>
+            <!-- 購物車結帳 -->
+            <div class="cartFooter row">
+                <input id="checkUser" type="hidden" value="<%=userId%>">
+                <div class="col-3" style="display:flex ;padding-left: 35px;">
+                    <input id="checkAll" type="checkbox" name="all">
+                    <label for="checkAll">&emsp;全部選擇/刪除項目</label>
+                </div>
+                <div class="col-5" style="text-align: right;"><h3>TWD</h3>
+                </div>
+                <div class="col-2" style="">
+                    <h3 id="myPrice"></h3>
+                    <input id="totalPrice" type="hidden" name="totalPrice" value="">
+                </div>
+                <div class="col-2 " style="">
+
+                    <button class=" btn btn-primary">結帳</button>
+                    <!-- <a href="/users/shoppay">00</a> -->
+                </div>
+            </div>
+        </form>
+        <br>
+        <!-- 購物車_結束 -->
+        <!-- 輪播商品_開始 -->
+        <h3>最多人瀏覽</h3>
+
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <h5>溪頭走走</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip2_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>故宮南院走走</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip3_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>南方澳平台</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip4_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>正濱漁港</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip5_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>	
+                    谷關風景特定區</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip6_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>鳳儀書院</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip7_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+            <div class="item">
+                <h5>台灣太魯閣</h5>
+                <div>
+                    <img class="img-fluid" src="/images/trip/trip8_1.jpg" alt="">
+                </div>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>可以使用三倍券</span></p>
+                <p><span><img src="/images/icon/PNG/16px/274-checkmark2.png" alt=""></span>
+                    <span>★★★★★</span></p>
+
+                <p><span>TWD</span>&emsp;<span>360</span></p>
+            </div>
+
+        </div>
+    </div>
+    <!-- 輪播商品_結束 -->
+    <!-- footer start -->
+    <div class="footer">
+        <div class="links">
+            <dl>
+                <dt>認識問導遊</dt>
+                <dd><a href="#">關於我們</a></dd>
+                <dd><a href="#">管理團隊</a></dd>
+                <dd><a href="#">人才招募</a></dd>
+                <dd><a href="#">客戶服務</a></dd>
+                <dd><a href="#">幫助</a></dd>
+            </dl>
+            <dl>
+                <dt>給旅人</dt>
+                <dd><a href="#">三大保證</a></dd>
+                <dd><a href="#">官方部落格</a></dd>
+                <dd><a href="#">會員好禮</a></dd>
+            </dl>
+            <dl>
+                <dt>合作夥伴</dt>
+                <dd><a href="#">合作夥伴</a></dd>
+                <dd><a href="#">成為導遊</a></dd>
+                <dd><a href="#">同業合作</a></dd>
+                <dd><a href="#">聯盟行銷</a></dd>
+                <dd><a href="#">旅遊客製規劃</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!-- footer end -->
+    <!-- 輪播圖控制器 -->
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                stagePadding: 50,
+                loop: true,
+                margin: 20,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    500: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
